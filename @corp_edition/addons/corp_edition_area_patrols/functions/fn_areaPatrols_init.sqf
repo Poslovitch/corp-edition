@@ -1,7 +1,14 @@
 private _logic	= param [0, objNull, [objNull]];
 private _units	= param [1, [], [[]]];
 
-if (count _units == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_AREA_PATROLS_DN", _logic, localize "STR_CORP_CORE_NO_UNIT_SYNCHED"]] call BIS_fnc_error;};
+if (count _units == 0) exitWith {
+	[
+		format [
+			"%1 %2 : %3", localize "STR_CORP_AREA_PATROLS_DN",
+			_logic, localize "STR_CORP_CORE_NO_UNIT_SYNCHED"
+		]
+	] call BIS_fnc_error;
+};
 
 private _area				= _logic getvariable ["objectArea", [0, 0, 0, false, 0]];
 private _numberOfGroups		= _logic getVariable ["NumberOfGroups", 4];
