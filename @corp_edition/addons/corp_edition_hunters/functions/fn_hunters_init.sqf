@@ -16,38 +16,38 @@ private _side		= side (_units select 0);
 
 // ce tableau contient toutes les paramètres de toutes les chasses
 if (isNil {CORP_var_hunters_hunts}) then {
-	CORP_var_hunters_hunts = [];
+    CORP_var_hunters_hunts = [];
 };
 
 // debug, responsable de dessiner les unités et leurs waypoints sur carte
 if (_debug && {hasInterface}) then {
-	if (isNil {CORP_var_hunters_hunters}) then {
-		CORP_var_hunters_hunters = grpNull;
+    if (isNil {CORP_var_hunters_hunters}) then {
+        CORP_var_hunters_hunters = grpNull;
 
-		((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {
-			private _map		= _this select 0;
-			private _sideColor	= [side CORP_var_hunters_hunters, "ARRAY"] call CORP_fnc_getSideColor;
+        ((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {
+            private _map		= _this select 0;
+            private _sideColor	= [side CORP_var_hunters_hunters, "ARRAY"] call CORP_fnc_getSideColor;
 
-			// on dessine les icônes des chasseurs
-			{
-				_map drawIcon [
-					getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
-					_sideColor,
-					visiblePosition _x,
-					0.5 / ctrlMapScale _map,
-					0.5 / ctrlMapScale _map,
-					getDirVisual _x
-				];
-			} forEach (units CORP_var_hunters_hunters);
+            // on dessine les icônes des chasseurs
+            {
+                _map drawIcon [
+                    getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
+                    _sideColor,
+                    visiblePosition _x,
+                    0.5 / ctrlMapScale _map,
+                    0.5 / ctrlMapScale _map,
+                    getDirVisual _x
+                ];
+            } forEach (units CORP_var_hunters_hunters);
 
-			// on dessine le waypoint sur carte
-			private _waypoints = waypoints CORP_var_hunters_hunters;
+            // on dessine le waypoint sur carte
+            private _waypoints = waypoints CORP_var_hunters_hunters;
 
-			if (count _waypoints > 0) then {
-				_map drawLine [waypointPosition (_waypoints select 0), getPosASLVisual (leader CORP_var_hunters_hunters), _sideColor];
-			};
-		}];
-	};
+            if (count _waypoints > 0) then {
+                _map drawLine [waypointPosition (_waypoints select 0), getPosASLVisual (leader CORP_var_hunters_hunters), _sideColor];
+            };
+        }];
+    };
 };
 
 // on enregistre l'état de cette chasse

@@ -1,6 +1,6 @@
 /*
-	CORP Edition addons
-	http://www.corp-arma.fr
+    CORP Edition addons
+    http://www.corp-arma.fr
 */
 
 private _playerPosition	= param [0, [0, 0, 0], [[]], 3];

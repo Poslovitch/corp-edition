@@ -1,6 +1,6 @@
 
 if (CORP_var_paraJumpClassic_marker != "") then {
-	deleteMarkerLocal CORP_var_paraJumpClassic_marker;
+    deleteMarkerLocal CORP_var_paraJumpClassic_marker;
 };
 
 CORP_var_paraJumpClassic_flag			= nil;

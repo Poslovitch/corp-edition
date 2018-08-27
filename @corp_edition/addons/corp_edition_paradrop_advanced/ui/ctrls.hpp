@@ -1,6 +1,6 @@
 /*
-	CORP Edition addons
-	http://www.corp-arma.fr
+    CORP Edition addons
+    http://www.corp-arma.fr
 */
 
 #define PARADROP_ADVANCED_DIALOG_IDD 423431
