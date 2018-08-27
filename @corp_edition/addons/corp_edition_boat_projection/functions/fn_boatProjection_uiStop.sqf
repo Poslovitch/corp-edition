@@ -1,10 +1,10 @@
 /*
-	CORP Edition addons
-	http://www.corp-arma.fr
+    CORP Edition addons
+    http://www.corp-arma.fr
 */
 
 if (CORP_var_boatProjection_marker != "") then {
-	deleteMarkerLocal CORP_var_boatProjection_marker;
+    deleteMarkerLocal CORP_var_boatProjection_marker;
 };
 
 CORP_var_boatProjection_object		= nil;

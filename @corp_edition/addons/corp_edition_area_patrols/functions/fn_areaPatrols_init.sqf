@@ -81,7 +81,9 @@ for "_i" from 0 to (_numberOfGroups - 1) do {
         _unitsResized pushBack (selectRandom _units);
     };
 
-    private _group = [getPosASL _logic, _area, _side, [_unitsResized, {typeOf _x}] call CBA_fnc_filter, _waypointsPerGroup] call CORP_fnc_areaPatrols_createAreaPatrol;
+    private _group = [
+        getPosASL _logic, _area, _side, [_unitsResized, {typeOf _x}] call CBA_fnc_filter, _waypointsPerGroup
+    ] call CORP_fnc_areaPatrols_createAreaPatrol;
     _patrols pushBack _group;
 
     // debug

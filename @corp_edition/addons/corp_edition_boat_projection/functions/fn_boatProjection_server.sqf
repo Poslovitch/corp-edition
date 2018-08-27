@@ -1,6 +1,6 @@
 /*
-	CORP Edition addons
-	http://www.corp-arma.fr
+    CORP Edition addons
+    http://www.corp-arma.fr
 */
 
 private _coordinates	= _this select 0;
@@ -13,12 +13,12 @@ private _dir			= [_coordinates, [worldSize / 2, worldSize / 2, 0]] call BIS_fnc_
 private _boat = objNull;
 
 for [{_i = 0; _c = count _players;}, {_i < _c}, {_i = _i + 1}] do {
-	private _mod = _i mod _boatPlaces;
+    private _mod = _i mod _boatPlaces;
 
-	if (_mod == 0) then {
-		_boat = createVehicle [_boatClassname, [_coordinates, (_i / 5) * 10, _dir + 135] call BIS_fnc_relPos, [], 0, "CAN_COLLIDE"];
-		_boat setDir _dir;
-	};
+    if (_mod == 0) then {
+        _boat = createVehicle [_boatClassname, [_coordinates, (_i / 5) * 10, _dir + 135] call BIS_fnc_relPos, [], 0, "CAN_COLLIDE"];
+        _boat setDir _dir;
+    };
 
-	[_boat, _mod] remoteExec ["CORP_fnc_BoatProjection_client", _players select _i];
+    [_boat, _mod] remoteExec ["CORP_fnc_BoatProjection_client", _players select _i];
 };

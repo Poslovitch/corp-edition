@@ -1,6 +1,6 @@
 /*
-	CORP Edition addons
-	http://www.corp-arma.fr
+    CORP Edition addons
+    http://www.corp-arma.fr
 */
 
 private _boat	= _this select 0;
@@ -11,8 +11,8 @@ cutText ["", "BLACK OUT", 2];
 sleep 2;
 
 switch (_mod) do {
-	case 0: { player moveInDriver _boat; };
-	default { player moveInCargo [_boat, _mod]; };
+    case 0: { player moveInDriver _boat; };
+    default { player moveInCargo [_boat, _mod]; };
 };
 
 sleep 0.5;
