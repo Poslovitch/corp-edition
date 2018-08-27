@@ -36,8 +36,8 @@ Creates groups randomly patrolling in the area of the module.
 Data you can get out of the module using [getVariable](https://community.bistudio.com/wiki/getVariable) command.
 
 * **createdGroups**  
-*Contient les groupes créés par le module.*
+*Contains groups created by the module.*
 
-  * *Attention, la variable n’est pas mise à jour en cours de partie et peut contenir des groupes qui n’existent plus, à vous de faire les vérifications nécessaires dans vos scripts.*
+  * *Warning, the variable is not updated during mission's life and can contain groups which does not exist anymore. It's up to you to check in your scripts.*
 
-  * *Cette variable est disponible côté serveur uniquement.*
+  * *This variable is available server side only.*
