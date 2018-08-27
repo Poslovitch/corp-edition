@@ -1,5 +1,5 @@
-private _logic	= param [0, objNull, [objNull]];
-private _units	= param [1, [], [[]]];
+private _logic = param [0, objNull, [objNull]];
+private _units = param [1, [], [[]]];
 
 if (count _units == 0) exitWith {
 	[
@@ -10,15 +10,15 @@ if (count _units == 0) exitWith {
 	] call BIS_fnc_error;
 };
 
-private _area				= _logic getvariable ["objectArea", [0, 0, 0, false, 0]];
-private _numberOfGroups		= _logic getVariable ["NumberOfGroups", 4];
-private _unitsPerGroup		= _logic getVariable ["UnitsPerGroup", 4];
-private _waypointsPerGroup	= _logic getVariable ["WaypointsPerGroup", 4];
-private _dynamicSimulation	= _logic getVariable ["DynamicSimulation", true];
-private _debug				= _logic getVariable ["Debug", false];
+private _area              = _logic getvariable ["objectArea", [0, 0, 0, false, 0]];
+private _numberOfGroups    = _logic getVariable ["NumberOfGroups", 4];
+private _unitsPerGroup     = _logic getVariable ["UnitsPerGroup", 4];
+private _waypointsPerGroup = _logic getVariable ["WaypointsPerGroup", 4];
+private _dynamicSimulation = _logic getVariable ["DynamicSimulation", true];
+private _debug             = _logic getVariable ["Debug", false];
 
-private _units	= _units call CORP_fnc_getGroupedUnits;
-private _side	= side (_units select 0);
+private _units = _units call CORP_fnc_getGroupedUnits;
+private _side  = side (_units select 0);
 
 // si le débug est demandé et que la machine a une interface
 if (_debug && {hasInterface}) then {
@@ -35,8 +35,8 @@ if (_debug && {hasInterface}) then {
 
             // pour chaque groupe créé par un module Area Patrols et dont le paramètre "débug" est coché
             {
-                private _group		= _x;
-                private _sideColor	= [side _group, "ARRAY"] call CORP_fnc_getSideColor;
+                private _group     = _x;
+                private _sideColor = [side _group, "ARRAY"] call CORP_fnc_getSideColor;
 
                 // on dessine chaque unité du groupe
                 {
