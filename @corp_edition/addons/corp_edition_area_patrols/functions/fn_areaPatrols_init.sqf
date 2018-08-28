@@ -20,25 +20,25 @@ private _debug             = _logic getVariable ["Debug", false];
 private _units = _units call CORP_fnc_getGroupedUnits;
 private _side  = side (_units select 0);
 
-// si le débug est demandé et que la machine a une interface
+// If debug mode is enabled and the machine has an interface.
 if (_debug && {hasInterface}) then {
-    // on créé l'event handler responsable de dessiner les unités et les waypoints sur carte
-    // cet event handler se base sur une variable globale qui sera chargé par chaque modules
-    // seul le premier module a être activé exécutera ce code
+    // We create the EH responsible for drawing units and waypoints on map,
+    // this EH relies on a global variable that will be fed by each module.
+    // Only the first activated module will run the following block.
     if (isNil {CORP_var_areaPatrols_patrols}) then {
 
         CORP_var_areaPatrols_patrols = [];
 
-        // on déssine les zones et les unités sur carte
+        // We draw areas and units on map.
         ((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {
             private _map = _this select 0;
 
-            // pour chaque groupe créé par un module Area Patrols et dont le paramètre "débug" est coché
+            // For each group created by an Area Patrols module that has debug enabled.
             {
                 private _group     = _x;
                 private _sideColor = [side _group, "ARRAY"] call CORP_fnc_getSideColor;
 
-                // on dessine chaque unité du groupe
+                // We draw each unit of the group.
                 {
                     _map drawIcon [
                         getText (configFile >> "CfgVehicles" >> typeOf _x >> "Icon"),
@@ -52,7 +52,7 @@ if (_debug && {hasInterface}) then {
 
                 private _waypointsCount = count (waypoints _group);
 
-                // on dessine les waypoints du groupe
+                // We draw each waypoint of the group.
                 for [{private _i = (_waypointsCount - 1)}, {_i > 0}, {_i = _i - 1}] do {
                     _map drawLine [waypointPosition [_group, _i], waypointPosition [_group, _i - 1], _sideColor];
                 };
@@ -65,7 +65,7 @@ if (_debug && {hasInterface}) then {
         }];
     };
 
-    // on dessine la zone
+    // We draw the area.
     private _marker = createMarker [format ["area_%1", _logic], _logic];
     _marker setMarkerShape "RECTANGLE";
     _marker setMarkerSize [_area select 0, _area select 1];
@@ -76,7 +76,7 @@ if (_debug && {hasInterface}) then {
 
 private _patrols = [];
 
-// on créé les patrouilles
+// Create patrols.
 for "_i" from 0 to (_numberOfGroups - 1) do {
     private _unitsResized = [];
     private _random = ceil (random (_unitsPerGroup - 1));
@@ -90,19 +90,20 @@ for "_i" from 0 to (_numberOfGroups - 1) do {
     ] call CORP_fnc_areaPatrols_createAreaPatrol;
     _patrols pushBack _group;
 
-    // debug
+    // Debug.
     if !(isNil {CORP_var_areaPatrols_patrols}) then {
         CORP_var_areaPatrols_patrols pushBack _group;
     };
 
-    // activation/désactivation de la simulation dynamique pour le groupe créé
+    // Enabling/disabling dynamic simulation for the created group.
     _group enableDynamicSimulation _dynamicSimulation;
 
     // copie de l'équipement d'une des unités synchronisée
+    // Cloning gear from one of the units synched to de module.
     {
         _x setUnitLoadout [getUnitLoadout (selectRandom _units), true];
     } forEach (units _group);
 };
 
-// stockage des groupes créés dans le module
+// Storing created groups in the module.
 _logic setVariable ["createdGroups", _patrols];
