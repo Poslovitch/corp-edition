@@ -1,6 +1,20 @@
 /*
-    Outils d'édition du CORP
+    CORP's Mission Editing Tools
     http://www.corp-arma.fr
+
+    NOM : CORP_fnc_areaPatrols_createAreaPatrol
+    AUTEUR : zgmrvn
+    DESCRIPTION : Creates a randomly patrolling group in the given area.
+    RETURN : group
+
+    EXAMPLE :
+        _patrol = [
+            [1230, 2032, 0],                   // center
+            [0, 0, 0, false, -1],              // area
+            east,                              // side of the created group
+            ["O_G_Soldier_F", "O_G_medic_F"],  // units' classnames
+            [[1234, 2050, 0], [2435, 1266, 0]] // waypoints' positions
+        ] call CORP_fnc_areaPatrols_createAreaPatrol;
 */
 
 #define WAYPOINT_COMPLETION_RADIUS 4
