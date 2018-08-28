@@ -3,7 +3,11 @@ class CfgPatches {
         units[] = {"CORP_Module_AreaPatrols"};
         author = "CORP Modding Studio";
         requiredVersion = 1.66;
-        requiredAddons[] = {"A3_Modules_F", "corp_edition_core"};
+        requiredAddons[] = {
+            "A3_Modules_F",
+            "CORP_Edition_Core",
+            "cba_arrays"
+        };
     };
 };
 
