@@ -56,7 +56,11 @@ if (_debug && {hasInterface}) then {
                 for [{private _i = (_waypointsCount - 1)}, {_i > 0}, {_i = _i - 1}] do {
                     _map drawLine [waypointPosition [_group, _i], waypointPosition [_group, _i - 1], _sideColor];
                 };
-                _map drawLine [waypointPosition [_group, 0], waypointPosition [_group, _waypointsCount - 1], _sideColor];
+                _map drawLine [
+                    waypointPosition [_group, 0],
+                    waypointPosition [_group, _waypointsCount - 1],
+                    _sideColor
+                ];
             } forEach CORP_var_areaPatrols_patrols;
         }];
     };
