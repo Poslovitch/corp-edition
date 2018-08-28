@@ -25,7 +25,7 @@ private _side      = param [2, east, [sideUnknown]];
 private _units     = param [3];
 private _waypoints = param [4, 4, [0]];
 
-// on détermine la position des points de passage
+// We get random positions for our future waypoints.
 private _waypointsPositions = [];
 
 for [{private _i = 0}, {_i < _waypoints}, {_i = _i + 1}] do {
@@ -33,7 +33,7 @@ for [{private _i = 0}, {_i < _waypoints}, {_i = _i + 1}] do {
     _waypointsPositions pushBack _pos;
 };
 
-// on créé le groupe
+// We create the group.
 private _group = [
     _waypointsPositions select 0,
     _side,
@@ -43,7 +43,7 @@ private _group = [
 _group deleteGroupWhenEmpty true;
 deleteWaypoint [_group, 0];
 
-// on attribue les points de passage
+// Then we set waypoints.
 private _formations = ["STAG COLUMN","VEE","ECH LEFT","ECH RIGHT","COLUMN","LINE"];
 
 _group setFormation (selectRandom _formations);
