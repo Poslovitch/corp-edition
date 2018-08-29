@@ -15,8 +15,8 @@ class ConfirmButton;
 class CORP_BoatProjectionDialog {
     idd = BOAT_PROJECTION_DIALOG_IDD;
 
-    onLoad		= "[] spawn CORP_fnc_boatProjection_uiStart;";
-    onUnload	= "[] spawn CORP_fnc_boatProjection_uiStop;";
+    onLoad   = "[] spawn CORP_fnc_boatProjection_uiStart;";
+    onUnload = "[] spawn CORP_fnc_boatProjection_uiStop;";
 
     class ControlsBackground {
         class Title: BaseTitle {
