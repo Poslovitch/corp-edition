@@ -1,5 +1,5 @@
 /*
-    framework de mission du CORP
+    CORP's Mission Editing Tools
     http://www.corp-arma.fr
 */
 
