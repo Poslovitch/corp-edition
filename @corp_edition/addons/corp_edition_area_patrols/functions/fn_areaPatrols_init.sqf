@@ -103,7 +103,6 @@ for "_i" from 0 to (_numberOfGroups - 1) do {
     // Enabling/disabling dynamic simulation for the created group.
     _group enableDynamicSimulation _dynamicSimulation;
 
-    // copie de l'équipement d'une des unités synchronisée
     // Cloning gear from one of the units synched to de module.
     {
         _x setUnitLoadout [getUnitLoadout (selectRandom _units), true];
