@@ -15,6 +15,7 @@ if (isNil {CORP_var_buildingsOccupation_positions}) then {
     CORP_var_buildingsOccupation_positions = "";
 };
 
-CORP_var_buildingsOccupation_positions = CORP_var_buildingsOccupation_positions + (format ["{{%1,%2,%3},%4},%5", _pos select 0, _pos select 1, _pos select 2, floor _dir, endl]);
+private _newPositions = format ["{{%1,%2,%3},%4},%5", _pos select 0, _pos select 1, _pos select 2, floor _dir, endl];
+CORP_var_buildingsOccupation_positions = CORP_var_buildingsOccupation_positions + _newPositions;
 
 copyToClipboard CORP_var_buildingsOccupation_positions;
