@@ -6,7 +6,16 @@
 private _logic = param [0, objNull, [objNull]];
 private _units = param [1, [], [[]]];
 
-if (count _units == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_BUILDINGS_OCCUPATION_DN", _logic, localize "STR_CORP_CORE_NO_UNIT_SYNCHED"]] call BIS_fnc_error;};
+if (count _units == 0) exitWith {
+    [
+        format [
+            "%1 %2 : %3",
+            localize "STR_CORP_BUILDINGS_OCCUPATION_DN",
+            _logic,
+            localize "STR_CORP_CORE_NO_UNIT_SYNCHED"
+        ]
+    ] call BIS_fnc_error;
+};
 
 private _area              = _logic getvariable ["objectArea", [0, 0, 0, false, 0]];
 private _numberOfUnits     = _logic getVariable ["NumberOfUnits", 10];
@@ -85,7 +94,14 @@ if (hasInterface) then {
 };
 
 // création de l'occupation
-private _occupation = [getPosASL _logic, (_area select 0) max (_area select 1), _numberOfUnits, _side, [_units, {typeOf _x}] call CBA_fnc_filter, _keepPosition] call CORP_fnc_buildingsOccupation_occupation;
+private _occupation = [
+    getPosASL _logic,
+    (_area select 0) max (_area select 1),
+    _numberOfUnits,
+    _side,
+    [_units, {typeOf _x}] call CBA_fnc_filter,
+    _keepPosition
+] call CORP_fnc_buildingsOccupation_occupation;
 
 // stockage des unitiés créées dans la logique
 _logic setVariable ["createdUnits", _occupation];
