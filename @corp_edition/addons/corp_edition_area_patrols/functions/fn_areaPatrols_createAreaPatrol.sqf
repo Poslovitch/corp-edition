@@ -2,10 +2,10 @@
     CORP's Mission Editing Tools
     http://www.corp-arma.fr
 
-    NOM : CORP_fnc_areaPatrols_createAreaPatrol
-    AUTEUR : zgmrvn
+    NAME : CORP_fnc_areaPatrols_createAreaPatrol
+    AUTHOR : zgmrvn
     DESCRIPTION : Creates a randomly patrolling group in the given area.
-    RETURN : group
+    RETURN : Group.
 
     EXAMPLE :
         _patrol = [
