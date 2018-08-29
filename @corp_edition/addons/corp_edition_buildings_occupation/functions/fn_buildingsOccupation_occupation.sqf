@@ -1,6 +1,20 @@
 /*
     CORP's Mission Editing Tools
     http://www.corp-arma.fr
+
+    NAME :        CORP_fnc_buildingsOccupation_occupation
+    AUTHOR :      zgmrvn
+    DESCRIPTION : Creates IAs inside the buildings of the area.
+    RETURN :      Array of units.
+    EXAMPLE :
+        _occupation = [
+            [2000, 1000, 0],                  // center
+            200,                              // radius
+            40,                               // number of units
+            east,                             // side
+            ["O_medic_F", "O_soldier_exp_F"], // type of unit
+            _keepPosition                     // percentage of static units (0 to 1)
+        ] call CORP_fnc_buildingsOccupation_occupation;
 */
 
 #define PATH_ACTIVATION_LOOP_DELAY 10
