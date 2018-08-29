@@ -3,12 +3,12 @@
     http://www.corp-arma.fr
 */
 
-private _coordinates	= _this select 0;
-private _players		= _this select 1;
-private _boatData		= (getArray (configFile >> "CfgCORP" >> "BoatProjection" >> "boats")) select (_this select 2);
-private _boatClassname	= _boatData select 0;
-private _boatPlaces		= _boatData select 1;
-private _dir			= [_coordinates, [worldSize / 2, worldSize / 2, 0]] call BIS_fnc_dirTo;
+private _coordinates   = _this select 0;
+private _players       = _this select 1;
+private _boatData      = (getArray (configFile >> "CfgCORP" >> "BoatProjection" >> "boats")) select (_this select 2);
+private _boatClassname = _boatData select 0;
+private _boatPlaces    = _boatData select 1;
+private _dir           = [_coordinates, [worldSize / 2, worldSize / 2, 0]] call BIS_fnc_dirTo;
 
 private _boat = objNull;
 
