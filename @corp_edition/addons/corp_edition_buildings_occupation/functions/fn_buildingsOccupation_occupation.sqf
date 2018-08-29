@@ -13,14 +13,15 @@ private _units			= param [4, [], [[]]];
 private _keepPosition	= param [5, 0.5, [0]];
 private _resumeDistance	= param [6, 25, [0]];
 
-private _positions	= []; // toutes les positions trouvées dans la zone
-private _buildings	= nearestObjects [_center, ["Building"], _radius, true];
-private _return		= [];
+private _positions = []; // Every position found inside the area.
+private _buildings = nearestObjects [_center, ["Building"], _radius, true];
+private _return    = [];
 
-private _sides	= [west, east, independent]; // sides opposés à l'unité en occupation
+// Find enemy sides.
+private _sides	= [west, east, independent];
 _sides deleteAt (_sides find _side);
 
-// récupération de toutes les positons de bâtiments de la zone renseignée
+// Get every positions inside the given area.
 {
     private _building = _x;
 
@@ -36,9 +37,9 @@ _sides deleteAt (_sides find _side);
 _positions = [_positions] call CBA_fnc_shuffle;
 private _positionsCount = count _positions;
 
-// on place les unités dans les bâtiments
-// tant que le nombre d'unités créées est inférieur au nombre demandé
-// et tant qu'il-y-a moins d'unités que le nombre de positions disponibles
+// Create IAs
+// as long as the number of created units is lower than the requested number
+// and as long as there are less units than available positions.
 for [{private _i = 0}, {(_i < _unitsCount) && {_i < _positionsCount}}, {_i = _i + 1}] do {
     private _position	= _positions select _i;
     private _building	= _position select 0;
@@ -61,15 +62,13 @@ for [{private _i = 0}, {(_i < _unitsCount) && {_i < _positionsCount}}, {_i = _i 
     _wp setWaypointCombatMode "RED";
     _wp setWaypointCompletionRadius 3;
 
-    // si un poucentage d'unités fixes demandé
-    // on désactive la capacité de l'ia à chercher un chemin
-    // et on vérifie si un joueur est à proximité pour réactiver cette capacité
+    // If a percentage of static units is requested we disable AI's path finding
+    // and we periodically check if a player is near the unit, if so we reactivate path finding.
     if (_keepPosition != 0) then {
         if ((random 1) < _keepPosition) then {
             _unit disableAI "PATH";
 
-            // on vérifie si des joueurs sont à proximité
-            // si oui, on réactive le PATH
+            // We check for player near the unit, if so, we reactivate path finding.
             [_unit, _sides, _resumeDistance] spawn {
                 private _unit			= _this select 0;
                 private _sides			= _this select 1;
@@ -77,15 +76,15 @@ for [{private _i = 0}, {(_i < _unitsCount) && {_i < _positionsCount}}, {_i = _i 
                 private _loop			= true;
                 private _pos			= ASLToATL getPosASL _unit;
 
-                // délais aléatoire pour éviter toutes les boucles des IA exécutées au même moment
+                // Random delay to prevent units' loops to be synched.
                 sleep random PATH_ACTIVATION_LOOP_DELAY;
 
-                // tant que l'unité est en vie
-                // on vérifie à intervalle régulier s'il y a des joueurs à proximité de l'unité
+                // As long as the unit is alive
+                // we periodically check for a player near the unit.
                 while {_loop && {alive _unit}} do {
                     private _players = [_pos, _resumeDistance, _sides] call CORP_fnc_alivePlayersRadius;
 
-                    // si des joueurs ont été trouvés, on réactive le PATH
+                    // If player were found, reactivate path finding.
                     if (count _players > 0) then {
                         _unit enableAI "PATH";
                         _loop = false;
