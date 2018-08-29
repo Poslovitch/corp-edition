@@ -7,8 +7,8 @@ if (CORP_var_boatProjection_marker != "") then {
     deleteMarkerLocal CORP_var_boatProjection_marker;
 };
 
-CORP_var_boatProjection_object		= nil;
-CORP_var_boatProjection_logic		= nil;
-CORP_var_boatProjection_players		= nil;
-CORP_var_boatProjection_coordinates	= nil;
-CORP_var_boatProjection_marker		= nil;
+CORP_var_boatProjection_object      = nil;
+CORP_var_boatProjection_logic       = nil;
+CORP_var_boatProjection_players     = nil;
+CORP_var_boatProjection_coordinates = nil;
+CORP_var_boatProjection_marker      = nil;
