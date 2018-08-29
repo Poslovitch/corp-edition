@@ -1,5 +1,5 @@
 /*
-    CORP Edition addons
+    CORP's Mission Editing Tools
     http://www.corp-arma.fr
 */
 
