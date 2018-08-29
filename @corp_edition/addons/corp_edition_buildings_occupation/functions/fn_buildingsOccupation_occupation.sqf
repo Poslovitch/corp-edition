@@ -2,10 +2,11 @@
     CORP's Mission Editing Tools
     http://www.corp-arma.fr
 
-    NAME :        CORP_fnc_buildingsOccupation_occupation
-    AUTHOR :      zgmrvn
+    NAME : CORP_fnc_buildingsOccupation_occupation
+    AUTHOR : zgmrvn
     DESCRIPTION : Creates IAs inside the buildings of the area.
-    RETURN :      Array of units.
+    RETURN : Array of units.
+    
     EXAMPLE :
         _occupation = [
             [2000, 1000, 0],                  // center
