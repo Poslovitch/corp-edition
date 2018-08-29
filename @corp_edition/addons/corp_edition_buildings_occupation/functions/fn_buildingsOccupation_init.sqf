@@ -1,5 +1,3 @@
-private _logic	= param [0, objNull, [objNull]];
-private _units	= param [1, [], [[]]];
 /*
     CORP's Mission Editing Tools
     http://www.corp-arma.fr
@@ -10,16 +8,16 @@ private _units = param [1, [], [[]]];
 
 if (count _units == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_BUILDINGS_OCCUPATION_DN", _logic, localize "STR_CORP_CORE_NO_UNIT_SYNCHED"]] call BIS_fnc_error;};
 
-private _area				= _logic getvariable ["objectArea", [0, 0, 0, false, 0]];
-private _numberOfUnits		= _logic getVariable ["NumberOfUnits", 10];
-private _keepPosition		= _logic getVariable ["KeepPosition", 0.5];
-private _resumeDistance		= _logic getVariable ["ResumeDistance", 25];
-private _dynamicSimulation	= _logic getVariable ["DynamicSimulation", true];
-private _debugUnits			= _logic getVariable ["DebugUnits", false];
-private _debugBuildings		= _logic getVariable ["DebugBuildings", false];
+private _area              = _logic getvariable ["objectArea", [0, 0, 0, false, 0]];
+private _numberOfUnits     = _logic getVariable ["NumberOfUnits", 10];
+private _keepPosition      = _logic getVariable ["KeepPosition", 0.5];
+private _resumeDistance    = _logic getVariable ["ResumeDistance", 25];
+private _dynamicSimulation = _logic getVariable ["DynamicSimulation", true];
+private _debugUnits        = _logic getVariable ["DebugUnits", false];
+private _debugBuildings    = _logic getVariable ["DebugBuildings", false];
 
-private _units	= _units call CORP_fnc_getGroupedUnits;
-private _side	= side (_units select 0);
+private _units = _units call CORP_fnc_getGroupedUnits;
+private _side  = side (_units select 0);
 
 // si la machine a une interface
 if (hasInterface) then {
@@ -37,7 +35,7 @@ if (hasInterface) then {
 
                 // pour chaque zone
                 {
-                    private _areaUnits	= _x;
+                    private _areaUnits = _x;
                     // pour chaque unité en vie de la zone on dessine une icône
                     {
                         if (alive _x) then {
