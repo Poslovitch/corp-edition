@@ -1,5 +1,12 @@
 private _logic	= param [0, objNull, [objNull]];
 private _units	= param [1, [], [[]]];
+/*
+    CORP's Mission Editing Tools
+    http://www.corp-arma.fr
+*/
+
+private _logic = param [0, objNull, [objNull]];
+private _units = param [1, [], [[]]];
 
 if (count _units == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_BUILDINGS_OCCUPATION_DN", _logic, localize "STR_CORP_CORE_NO_UNIT_SYNCHED"]] call BIS_fnc_error;};
 
