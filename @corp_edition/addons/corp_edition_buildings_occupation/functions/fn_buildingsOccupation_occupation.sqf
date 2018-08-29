@@ -5,13 +5,13 @@
 
 #define PATH_ACTIVATION_LOOP_DELAY 10
 
-private _center			= param [0, [0, 0, 0], [objNull, []], 3];
-private _radius			= param [1, 100, [0]];
-private _unitsCount		= param [2, 10, [0]];
-private _side			= param [3, east, [sideUnknown]];
-private _units			= param [4, [], [[]]];
-private _keepPosition	= param [5, 0.5, [0]];
-private _resumeDistance	= param [6, 25, [0]];
+private _center         = param [0, [0, 0, 0], [objNull, []], 3];
+private _radius         = param [1, 100, [0]];
+private _unitsCount     = param [2, 10, [0]];
+private _side           = param [3, east, [sideUnknown]];
+private _units          = param [4, [], [[]]];
+private _keepPosition   = param [5, 0.5, [0]];
+private _resumeDistance = param [6, 25, [0]];
 
 private _positions = []; // Every position found inside the area.
 private _buildings = nearestObjects [_center, ["Building"], _radius, true];
@@ -41,10 +41,10 @@ private _positionsCount = count _positions;
 // as long as the number of created units is lower than the requested number
 // and as long as there are less units than available positions.
 for [{private _i = 0}, {(_i < _unitsCount) && {_i < _positionsCount}}, {_i = _i + 1}] do {
-    private _position	= _positions select _i;
-    private _building	= _position select 0;
-    private _pos 		= _position select 1;
-    private _dir		= _position select 2;
+    private _position = _positions select _i;
+    private _building = _position select 0;
+    private _pos      = _position select 1;
+    private _dir      = _position select 2;
 
     private _group = createGroup _side;
     _group deleteGroupWhenEmpty true;
@@ -70,11 +70,11 @@ for [{private _i = 0}, {(_i < _unitsCount) && {_i < _positionsCount}}, {_i = _i 
 
             // We check for player near the unit, if so, we reactivate path finding.
             [_unit, _sides, _resumeDistance] spawn {
-                private _unit			= _this select 0;
-                private _sides			= _this select 1;
-                private _resumeDistance	= _this select 2;
-                private _loop			= true;
-                private _pos			= ASLToATL getPosASL _unit;
+                private _unit           = _this select 0;
+                private _sides          = _this select 1;
+                private _resumeDistance = _this select 2;
+                private _loop           = true;
+                private _pos            = ASLToATL getPosASL _unit;
 
                 // Random delay to prevent units' loops to be synched.
                 sleep random PATH_ACTIVATION_LOOP_DELAY;
