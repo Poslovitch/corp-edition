@@ -10,7 +10,10 @@ private _objects = param [1, [], [[]]];
 
 {
     _x addAction [
-        format ["<t color='#ffffff'><img image='\corp_edition_boat_projection\icon.paa'/> %1</t>", localize "STR_CORP_BOAT_PROJECTION_DN"],
+        format [
+            "<t color='#ffffff'><img image='\corp_edition_boat_projection\icon.paa'/> %1</t>",
+            localize "STR_CORP_BOAT_PROJECTION_DN"
+        ],
         {
             CORP_var_boatProjection_object = (_this select 0);
             CORP_var_boatProjection_logic = _this select 3;
