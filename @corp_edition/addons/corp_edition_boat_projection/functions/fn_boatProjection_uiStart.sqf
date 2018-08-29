@@ -8,26 +8,26 @@
 // déclaration des variables du module
 // CORP_var_boatProjection_object, déclarée dans le code de l'action afin de récupérer l'objet sur lequel est attachée l'action et ainsi pouvoir récupérer les joueurs à proximité
 // CORP_var_boatProjection_logic, déclarée dans le code de l'action afin de récupérer la logique du module qui contient le paramètre de distance
-CORP_var_boatProjection_players		= [];
-CORP_var_boatProjection_coordinates	= [];
-CORP_var_boatProjection_marker		= "";
+CORP_var_boatProjection_players     = [];
+CORP_var_boatProjection_coordinates = [];
+CORP_var_boatProjection_marker      = "";
 
 waitUntil {!isNull (findDisplay BOAT_PROJECTION_DIALOG_IDD)};
 
 disableSerialization;
 
-private _dialog		= findDisplay BOAT_PROJECTION_DIALOG_IDD;
-private _boatList	= _dialog displayCtrl BOAT_PROJECTION_BOATLIST_IDC;
-private _map 		= _dialog displayCtrl BOAT_PROJECTION_MAP_IDC;
-private _close 		= _dialog displayCtrl BOAT_PROJECTION_CLOSE_IDC;
-private _projection	= _dialog displayCtrl BOAT_PROJECTION_PROJECTION_IDC;
+private _dialog     = findDisplay BOAT_PROJECTION_DIALOG_IDD;
+private _boatList   = _dialog displayCtrl BOAT_PROJECTION_BOATLIST_IDC;
+private _map        = _dialog displayCtrl BOAT_PROJECTION_MAP_IDC;
+private _close      = _dialog displayCtrl BOAT_PROJECTION_CLOSE_IDC;
+private _projection = _dialog displayCtrl BOAT_PROJECTION_PROJECTION_IDC;
 
 // alimentation et actualisation de la liste
 [] spawn {
     disableSerialization;
 
-    private _dialog	= findDisplay BOAT_PROJECTION_DIALOG_IDD;
-    private _list	= _dialog displayCtrl BOAT_PROJECTION_LIST_IDC;
+    private _dialog = findDisplay BOAT_PROJECTION_DIALOG_IDD;
+    private _list   = _dialog displayCtrl BOAT_PROJECTION_LIST_IDC;
 
     while {!isNull (findDisplay BOAT_PROJECTION_DIALOG_IDD)} do {
         // récupération des joueurs à proximité
