@@ -96,8 +96,12 @@ _close ctrlAddEventHandler ["MouseButtonDown", {
 // Handle projection.
 _projection ctrlAddEventHandler ["MouseButtonDown", {
     if (CORP_var_boatProjection_marker != "") then {
-        [CORP_var_boatProjection_coordinates, CORP_var_boatProjection_players, lbCurSel BOAT_PROJECTION_BOATLIST_IDC] remoteExec ["CORP_fnc_BoatProjection_server", 2];
         // We ask the server to create the boast then embarque players.
+        [
+            CORP_var_boatProjection_coordinates,
+            CORP_var_boatProjection_players,
+            lbCurSel BOAT_PROJECTION_BOATLIST_IDC
+        ] remoteExec ["CORP_fnc_BoatProjection_server", 2];
 
         closeDialog BOAT_PROJECTION_DIALOG_IDD;
     };
