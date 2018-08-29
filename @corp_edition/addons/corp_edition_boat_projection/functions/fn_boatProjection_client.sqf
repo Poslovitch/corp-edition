@@ -3,8 +3,8 @@
     http://www.corp-arma.fr
 */
 
-private _boat	= _this select 0;
-private _mod	= _this select 1;
+private _boat = _this select 0;
+private _mod  = _this select 1;
 
 cutText ["", "BLACK OUT", 2];
 2 fadeSound 0;
