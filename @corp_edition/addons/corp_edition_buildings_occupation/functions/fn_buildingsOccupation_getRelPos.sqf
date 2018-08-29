@@ -3,9 +3,9 @@
     http://www.corp-arma.fr
 */
 
-private _building	= (nearestObjects [player, ["Building"], 50]) select 0;
-private _pos		= _building worldToModel (ASLToAGL (getPosASL player));
-private _dir		= (getDir player) - (getDir _building);
+private _building = (nearestObjects [player, ["Building"], 50]) select 0;
+private _pos      = _building worldToModel (ASLToAGL (getPosASL player));
+private _dir      = (getDir player) - (getDir _building);
 
 if (_dir < 0) then {
     _dir = _dir + 360;
