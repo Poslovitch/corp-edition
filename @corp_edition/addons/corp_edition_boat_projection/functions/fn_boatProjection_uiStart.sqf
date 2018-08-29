@@ -5,9 +5,14 @@
 
 #include "..\ui\ctrls.hpp"
 
-// déclaration des variables du module
-// CORP_var_boatProjection_object, déclarée dans le code de l'action afin de récupérer l'objet sur lequel est attachée l'action et ainsi pouvoir récupérer les joueurs à proximité
-// CORP_var_boatProjection_logic, déclarée dans le code de l'action afin de récupérer la logique du module qui contient le paramètre de distance
+// Module's global variables declaration.
+
+// CORP_var_boatProjection_object
+// Declared in the addAction code to have access to the object the action is attached to then get the players around.
+
+// CORP_var_boatProjection_logic
+// Declared in the addAction code to have access to the module and its disance parameter.
+
 CORP_var_boatProjection_players     = [];
 CORP_var_boatProjection_coordinates = [];
 CORP_var_boatProjection_marker      = "";
@@ -22,7 +27,7 @@ private _map        = _dialog displayCtrl BOAT_PROJECTION_MAP_IDC;
 private _close      = _dialog displayCtrl BOAT_PROJECTION_CLOSE_IDC;
 private _projection = _dialog displayCtrl BOAT_PROJECTION_PROJECTION_IDC;
 
-// alimentation et actualisation de la liste
+// Feeding/updating the list.
 [] spawn {
     disableSerialization;
 
@@ -30,13 +35,13 @@ private _projection = _dialog displayCtrl BOAT_PROJECTION_PROJECTION_IDC;
     private _list   = _dialog displayCtrl BOAT_PROJECTION_LIST_IDC;
 
     while {!isNull (findDisplay BOAT_PROJECTION_DIALOG_IDD)} do {
-        // récupération des joueurs à proximité
+        // Get the players at proximity.
         CORP_var_boatProjection_players = [CORP_var_boatProjection_object, 25] call CORP_fnc_alivePlayersRadius;
 
-        // on vide la liste
+        // Empty the list.
         lbClear _list;
 
-        // puis on la remplit de nouveau
+        // Then fill it again.
         {
             lbAdd [BOAT_PROJECTION_LIST_IDC, name _x];
             lbSetData [BOAT_PROJECTION_LIST_IDC, _forEachIndex, name _x];
@@ -46,16 +51,16 @@ private _projection = _dialog displayCtrl BOAT_PROJECTION_PROJECTION_IDC;
     };
 };
 
-// alimentation de la liste de bateaux disponibles
+// Feed available boat types list.
 {
     lbAdd [BOAT_PROJECTION_BOATLIST_IDC, getText (configFile >> "CfgVehicles" >> (_x select 0) >> "displayName")];
 } forEach (getArray (configFile >> "CfgCORP" >> "BoatProjection" >> "boats"));
 
 _boatList lbSetCurSel 0;
 
-// gestion du positionnement du marqueur de saut
+// Handle projection marker positionning.
 _map ctrlAddEventHandler ["mouseButtonDblClick", {
-    // si un marker éxiste déjà, on le supprime
+    // If a marker already exist, delete it.
     if (CORP_var_boatProjection_marker != "") then {
         deleteMarkerLocal CORP_var_boatProjection_marker;
     };
@@ -65,7 +70,7 @@ _map ctrlAddEventHandler ["mouseButtonDblClick", {
 
     private _farEnoughtCost = true;
 
-    // on vérifie que la côte la plus proche est suffisament loins
+    // Check for the nearest coast to be far enougth.
     for [{private _i = 0; private _d = CORP_var_boatProjection_logic getVariable "CoastDistance";}, {_i < _d}, {_i = _i + 2}] do {
         private _pos = [_center, _i,  (22.5 * _i) mod 360] call BIS_fnc_relPos;
 
@@ -74,7 +79,7 @@ _map ctrlAddEventHandler ["mouseButtonDblClick", {
         };
     };
 
-    // si la côte est assez loins, on créé le marker
+    // If the coast is far enougth, create the marker.
     if (_farEnoughtCost) then {
         CORP_var_boatProjection_coordinates = _center;
         CORP_var_boatProjection_marker = createMarkerLocal ["Marker1", CORP_var_boatProjection_coordinates];
@@ -83,16 +88,16 @@ _map ctrlAddEventHandler ["mouseButtonDblClick", {
     };
 }];
 
-// annulation du saut
+// Cancel projection.
 _close ctrlAddEventHandler ["MouseButtonDown", {
     closeDialog BOAT_PROJECTION_DIALOG_IDD;
 }];
 
-// gestion de la projection
+// Handle projection.
 _projection ctrlAddEventHandler ["MouseButtonDown", {
     if (CORP_var_boatProjection_marker != "") then {
-        // on demande au serveur de créer les bateaux et de faire embarquer les joueurs
         [CORP_var_boatProjection_coordinates, CORP_var_boatProjection_players, lbCurSel BOAT_PROJECTION_BOATLIST_IDC] remoteExec ["CORP_fnc_BoatProjection_server", 2];
+        // We ask the server to create the boast then embarque players.
 
         closeDialog BOAT_PROJECTION_DIALOG_IDD;
     };
