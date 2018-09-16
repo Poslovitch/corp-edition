@@ -1,5 +1,5 @@
 /*
-    Outils d'édition du CORP
+    CORP's Mission Editing Tools
     http://www.corp-arma.fr
 */
 
@@ -13,15 +13,15 @@ private _actionDistance   = _logic getVariable ["ActionDistance", 6];
 private _deleteObject     = _logic getVariable ["DeleteObject", false];
 private _removeAction     = _logic getVariable ["RemoveAction", false];
 
-// on attache une action à tous les objets synchronisés au module
+// Attach an action to every objects synched to the module.
 {
     [
-        _x,                // objet
-        _actionText,       // texte de l'action
-        _clientExpression, // expression à exécuter chez les clients
-        _serverExpression, // expression à exécuter côté serveur
-        _actionDistance,   // distance d'affichage de l'action
-        _deleteObject,     // supprimer l'objet
-        _removeAction      // supprimer l'action, pas d'importance si l'objet est supprimé
+        _x,                // object
+        _actionText,       // action's text
+        _clientExpression, // client side expression
+        _serverExpression, // server side expression
+        _actionDistance,   // display distance
+        _deleteObject,     // delete object
+        _removeAction      // delete action, doesn't matter if the object is deleted.
     ] call CORP_fnc_globalAddAction_addAction;
 } forEach _objects;
