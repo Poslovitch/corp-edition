@@ -8,22 +8,22 @@ player addAction [
         player allowDamage false;
         CORP_var_debug_allowDamage = false;
 
-        // l'invincibilité est désactivée à la sortie de la caméra spectateur
-        // ce script la réactive en surveillant la fermeture du display
+        // Invulnerability is disable when exiting spectator camera.
+        // this block reactivates it by whatching the display.
         [] spawn {
-            // tant que les dégâts sont désactivés
+            // As long as damages are disabled.
             while {!CORP_var_debug_allowDamage} do {
-                // on attend que
-                // caméra spectateur affichée || dégâts réactivés
+                // We wait for :
+                // spectator camera open || damages re-enabled
                 waitUntil { !isNull (findDisplay 60492) || CORP_var_debug_allowDamage };
 
-                // si les dégâts ne sont plus désactivés, on sort de la boucle
+                // If damages are no longer disabled, exit this loop.
                 if (CORP_var_debug_allowDamage) exitWith {};
 
-                // sinon, on continue et on attend que la caméra spectateur soit refermée
+                // Otherwise, we keep whatching for the spectator camera to be closed.
                 waitUntil { isNull (findDisplay 60492) };
 
-                // on re-désactive les dégâts
+                // Re-activate damages.
                 sleep 0.1;
                 player allowDamage false;
             };
