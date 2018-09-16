@@ -1,12 +1,16 @@
 /*
-    NOM :			CORP_fnc_getRandomPosInArea
-    AUTEUR :		zgmrvn
-    DESCRIPTION :
-        Retourne une position aléatoire dans la zone donnée.
+    CORP's Mission Editing Tools
+    http://www.corp-arma.fr
+
+    NAME : CORP_fnc_getRandomPosInArea
+    AUTHOR : zgmrvn
+    DESCRIPTION : Gets a random position in the given area.
 
     PARAMÈTRES :
         origine : tableau de coordonnées, centre de la zone
         zone : tableau au format zone, https://community.bistudio.com/wiki/triggerArea
+
+    RETURN : Position array.
 
     EXAMPLE :
         [[12456, 2045, 0], [200, 120, 45, false]] call CORP_fnc_getRandomPosInArea;
