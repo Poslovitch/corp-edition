@@ -1,21 +1,22 @@
 /*
-    Outils d'édition du CORP
+    CORP's Mission Editing Tools
     http://www.corp-arma.fr
 
-    NOM :			globalAddAction_addAction
-    AUTEUR :		zgmrvn
-    DESCRIPTION :	ajoute une action globale, compatible JIP
+    NAME : CORP_fnc_globalAddAction_addAction
+    AUTHOR : zgmrvn
+    DESCRIPTION : Adds a global addAction to the given object, JIP compatible.
+    RETURN : Void.
 
     EXAMPLE :
-        // serveur
+        // server
         [
-            _ammoBox,								// objet
-            "<t color='#FF0000'>Mon action</t>",	// texte de l'action
-            "_this execVM 'monScriptclient.sqf'",	// expression à exécuter chez les clients, _this contient le joueur ayant déclenché l'action et l'objet si ce dernier n'a pas été supprimé
-            "",										// expression à exécuter côté serveur, _this contient le joueur ayant déclenché l'action et l'objet si ce dernier n'a pas été supprimé
-            6,										// distance d'affichage de l'action
-            false,									// supprimer l'objet
-            true									// supprimer l'action, pas d'importance si l'objet est supprimé
+            _ammoBox,                            // object
+            "<t color='#FF0000'>Mon action</t>", // action's text
+            "_this execVM 'myClientScript.sqf'", // expression to execute client side, _this contains the player that triggered the action and the object if this one has not been deleted
+            "",                                  // expression to exexute server side, _this contains the player that triggered the action and the object if this one has not been deleted
+            6,                                   // display distance for the action
+            false,                               // delete object ?
+            true                                 // delete action ? Doesn't matter if the object is deleted
         ] call CORP_fnc_globalAddAction_addAction;
 */
 
@@ -30,25 +31,25 @@ private _deleteObject     = param [5, false, [true]];
 private _removeAction     = param [6, false, [true]];
 private _label            = [[random 100000000, 8] call CBA_fnc_formatNumber, _this select 7] select (count _this > 7);
 
-// si je suis le serveur, je pépare l'objet
+// If isServer, prepare the object.
 if (isServer) then {
-    // on ajoute l'action et l'état de l'action dans les propriétés membres de l'objet
-    // tout ce que le serveur fait c'est enregister une action nulle et un l'état valant true pour "l'action peut encore être exécutée", false pour "l'action a été exécutée et supprimée"
-    // chaque client remplace ensuite cette valeur par l'id d'une action si celle ci doit être créée
+    // We store the action and its state in the member properties of the object.
+    // The server creates a null action (-1) with a state of true for "the action still can be executed",
+    // each client then replace this value with the id of the action if this one has to be created.
     _object setVariable [format ["%1_%2_id", ACTION_PREFIX, _label], -1, true];
     _object setVariable [format ["%1_%2_state", ACTION_PREFIX, _label], true, true];
 
-    // si je suis un serveur dediée, je brodcast la fonction chez les clients
-    // en éditeur, la suite de la fonction sera exécutée, il n'est donc pas nécessaire de brodcaster
+    // If isDedicated, brodcast this function to clients.
+    // In Eden, the rest of the function will be executed, it's not necessary to brodcast.
     if (isDedicated) then {
         [_object, _text, _clientExpression, _serverExpression, _distance, _deleteObject, _removeAction, _label] remoteExec ["CORP_fnc_globalAddAction_addAction", -2, true];
     };
 };
 
-// si je suis un joueur (ce qui est vrai en éditeur), ajouter l'action
+// If i'm a player (which is true in Eden), add action.
 if (!isDedicated) then {
-    // dans le cas de l'éditeur, cette partie de la fonction sera en unscheduled
-    // il faut donc passer en scheduled car il va falloir attendre que le label de l'action stocké dans l'objet ait été brodcasté par le serveur
+    // In the case of Eden, this part of the function will be unscheduled,
+    // so we need move in scheduled because we need to wait for the server to brodcast the label of the action.
     [_object, _text, _clientExpression, _serverExpression, _distance, _deleteObject, _removeAction, _label] spawn {
         private _object           = _this select 0;
         private _text             = _this select 1;
@@ -59,22 +60,22 @@ if (!isDedicated) then {
         private _removeAction     = _this select 6;
         private _label            = _this select 7;
 
-        // si l'objet a été supprimé (dans le cas d'une reconnexion en cours de partie), on quitte la fonction
+        // If the object has been deleted (in the case of a JIP), exit the function.
         if (isNull _object) exitWith {};
 
-        // on attend que les propriétés de l'action ait été brodcastées par le serveur
+        // We wait for the action's properties to have been borcasted by the server.
         waitUntil {!isNil {_object getVariable (format ["%1_%2_id", ACTION_PREFIX, _label])}};
         waitUntil {!isNil {_object getVariable (format ["%1_%2_state", ACTION_PREFIX, _label])}};
 
-        // vérifier que l'action n'ait pas déjà été exécutée (dans le cas d'une reconnexion en cours de partie)
-        // la valeur doit être -1 si pas exécutée, -2 si exécutée
+        // Check if the action has not been already executed (in the case of a JIP),
+        // value must be -1 if not executed, -2 if executed.
         if !(_object getVariable ((format ["%1_%2_state", ACTION_PREFIX, _label]))) exitWith {};
 
         // addAction
         private _id = _object addAction [
             _text,
             {
-                // récupération des paramètres passés à l'action qui sont les paramètres passés à la fonction elle-même
+                // Recuperation of paramaters passed to the action which are the parameters passed to the function.
                 private _params           = _this select 3;
                 private _object           = _params select 0;
                 private _text             = _params select 1;
@@ -88,13 +89,13 @@ if (!isDedicated) then {
                 private _client = [-2, 0] select isServer;
                 private _server = 2;
 
-                // faut-il supprimer l'objet ?
+                // Delete object ?
                 if (_deleteObject) then {
                     [_object, {deleteVehicle _this}] remoteExec ["spawn", _server];
                 } else {
-                    // sinon, faut-il supprimer l'action ?
+                    // Else, delete action ?
                     if (_removeAction) then {
-                        // supprimer l'action pour tous les joueurs
+                        // Delete action for each client.
                         [
                             [_object, _label],
                             {
@@ -102,7 +103,7 @@ if (!isDedicated) then {
                             }
                         ] remoteExec ["spawn", _client];
 
-                        // le serveur passe l'état de l'action à déjà activée (false)
+                        // Server sets action's state to "already executed" (false).
                         [
                             [_object, _label],
                             {
@@ -112,19 +113,19 @@ if (!isDedicated) then {
                     };
                 };
 
-                // on prépare le tableau de données qui sera passé aux expressions client et serveur
-                // si l'objet n'a pas été supprimé, on l'ajoute au tableau de données
+                // We pepare the array that will be passed to clients and server's expressions.
+                // If the object has not been deleted, add it to the array.
                 _data = [[_this select 1, _object], [_this select 1]] select _deleteObject;
 
-                // si une expression client a été renseignée, on l'exécute
+                // If a client expression has been set, run it.
                 if (_clientExpression != "") then {
-                    // exécution de l'expression pour les clients seulement
+                    // Execute the expression for client only.
                     [_data, compile _clientExpression] remoteExec ["spawn", _client];
                 };
 
-                // si une expression serveur a été renseignée, on l'exécute
+                // If a server expression has been set, run it.
                 if (_serverExpression != "") then {
-                    // exécution de l'expression pour le serveur seulement
+                    // Execute the expression for the server only.
                     [_data, compile _serverExpression] remoteExec ["spawn", _server];
                 };
             },
