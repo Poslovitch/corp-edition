@@ -1,7 +1,11 @@
 /*
-    NOM :			CORP_fnc_centroid
-    AUTEUR :		sacha
-    DESCRIPTION :	retourne l'isobarycentre de n vecteurs 3D
+    CORP's Mission Editing Tools
+    http://www.corp-arma.fr
+
+    NAME : CORP_fnc_centroid
+    AUTHOR : sacha
+    DESCRIPTION : Return the isobarycenter of n 3D vectors.
+    RETURN : Position array.
 
     EXAMPLE :
         [[Ax,Ay,Az], [Bx,By,Bz], [Cx,Cy,Cz], ..., [Nx,Ny,Nz]] call CORP_fnc_centroid;
