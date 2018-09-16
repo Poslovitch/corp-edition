@@ -21,14 +21,14 @@
 
 #define ACTION_PREFIX "CORP_globalAddAction"
 
-private _object				= param [0, objNull, [objNull]];
-private _text				= param [1, "Action", [""]];
-private _clientExpression	= param [2, "", [""]];
-private _serverExpression	= param [3, "", [""]];
-private _distance			= param [4, 3, [0]];
-private _deleteObject		= param [5, false, [true]];
-private _removeAction		= param [6, false, [true]];
-private _label				= [[random 100000000, 8] call CBA_fnc_formatNumber, _this select 7] select (count _this > 7);
+private _object           = param [0, objNull, [objNull]];
+private _text             = param [1, "Action", [""]];
+private _clientExpression = param [2, "", [""]];
+private _serverExpression = param [3, "", [""]];
+private _distance         = param [4, 3, [0]];
+private _deleteObject     = param [5, false, [true]];
+private _removeAction     = param [6, false, [true]];
+private _label            = [[random 100000000, 8] call CBA_fnc_formatNumber, _this select 7] select (count _this > 7);
 
 // si je suis le serveur, je pépare l'objet
 if (isServer) then {
@@ -50,14 +50,14 @@ if (!isDedicated) then {
     // dans le cas de l'éditeur, cette partie de la fonction sera en unscheduled
     // il faut donc passer en scheduled car il va falloir attendre que le label de l'action stocké dans l'objet ait été brodcasté par le serveur
     [_object, _text, _clientExpression, _serverExpression, _distance, _deleteObject, _removeAction, _label] spawn {
-        private _object				= _this select 0;
-        private _text				= _this select 1;
-        private _clientExpression	= _this select 2;
-        private _serverExpression	= _this select 3;
-        private _distance			= _this select 4;
-        private _deleteObject		= _this select 5;
-        private _removeAction		= _this select 6;
-        private _label				= _this select 7;
+        private _object           = _this select 0;
+        private _text             = _this select 1;
+        private _clientExpression = _this select 2;
+        private _serverExpression = _this select 3;
+        private _distance         = _this select 4;
+        private _deleteObject     = _this select 5;
+        private _removeAction     = _this select 6;
+        private _label            = _this select 7;
 
         // si l'objet a été supprimé (dans le cas d'une reconnexion en cours de partie), on quitte la fonction
         if (isNull _object) exitWith {};
@@ -75,15 +75,15 @@ if (!isDedicated) then {
             _text,
             {
                 // récupération des paramètres passés à l'action qui sont les paramètres passés à la fonction elle-même
-                private _params				= _this select 3;
-                private _object				= _params select 0;
-                private _text				= _params select 1;
-                private _clientExpression	= _params select 2;
-                private _serverExpression	= _params select 3;
-                private _distance			= _params select 4;
-                private _deleteObject		= _params select 5;
-                private _removeAction		= _params select 6;
-                private _label				= _params select 7;
+                private _params           = _this select 3;
+                private _object           = _params select 0;
+                private _text             = _params select 1;
+                private _clientExpression = _params select 2;
+                private _serverExpression = _params select 3;
+                private _distance         = _params select 4;
+                private _deleteObject     = _params select 5;
+                private _removeAction     = _params select 6;
+                private _label            = _params select 7;
 
                 private _client = [-2, 0] select isServer;
                 private _server = 2;
