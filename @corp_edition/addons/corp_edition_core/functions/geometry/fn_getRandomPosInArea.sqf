@@ -24,7 +24,7 @@ private _b				= _area select 1;
 private _angle			= _area select 2;
 private _isRectangle	= _area select 3;
 
-// si la zone est rectangulaire
+// If the area is a rectangle.
 if (_isRectangle) then {
     // horizontal
     _origin	= [_origin, random _a, (_angle + 90) + 180 * (round (random 1))] call BIS_fnc_relPos;
@@ -32,20 +32,20 @@ if (_isRectangle) then {
     // vertical
     _origin	= [_origin, random _b, _angle + 180 * (round (random 1))] call BIS_fnc_relPos;
 
-// sinon, la zone est éliptique
+// Else, if the area is an elipse.
 } else {
-    // angle aléatoire
+    // Random angle.
     private _random = random 360;
 
-    // calcul du vecteur
+    // Compute vector.
     private _x	= sin _random * random _a,
     private _y	= cos _random * random _b,
 
-    // rotation du vecteur
+    // Rotate vector.
     private _xp = _y * (sin _angle) - _x * (cos _angle);
     private _yp = _y * (cos _angle) + _x * (sin _angle);
 
-    // addition du vecteur
+    // Vector addition.
     _origin = _origin vectorAdd [_xp, _yp, 0];
 };
 
