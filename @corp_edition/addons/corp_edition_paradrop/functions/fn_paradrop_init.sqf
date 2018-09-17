@@ -1,7 +1,7 @@
 if (!hasInterface) exitWith {};
 
-private _logic		= param [0, objNull, [objNull]];
-private _objects	= param [1, [], [[]]];
+private _logic   = param [0, objNull, [objNull]];
+private _objects = param [1, [], [[]]];
 
 {
     _x addAction [
