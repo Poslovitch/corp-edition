@@ -5,21 +5,21 @@ private _group	= param [0, grpNull, [grpNull]];
 private _logic	= param [1, objNull, [objNull]];
 private _center	= param [2, [0, 0, 0], [[]], 3];
 
-// si plus d'unités vivantes dans le groupe
+// If no more alive units in the group.
 if (({alive _x} count (units _group)) == 0) then {
     private _condition	= ([CORP_var_hunters_hunts, str _logic] call BIS_fnc_getFromPairs) select 2;
 
-    // si la condition de chasse est toujours vraie
+    // If the hunting condition is still true.
     if (call compile _condition) then {
         private _side				= side _group;
         private _huntingUnits		= ([CORP_var_hunters_hunts, str _logic] call BIS_fnc_getFromPairs) select 0;
         private _respawnDistance	= ([CORP_var_hunters_hunts, str _logic] call BIS_fnc_getFromPairs) select 1;
         private _parentUnits		= ([CORP_var_hunters_hunts, str _logic] call BIS_fnc_getFromPairs) select 3;
 
-        // on cherche une position dégagée
+        // We look for a clear position.
         private _freePos = [_center, _respawnDistance] call CORP_fnc_findPlayerFreePosition;
 
-        // on prépare le tableau du groupe
+        // We prepare the group's array.
         _array = [_parentUnits] call CBA_fnc_shuffle;
 
         while {count _array < _huntingUnits} do {
@@ -28,7 +28,7 @@ if (({alive _x} count (units _group)) == 0) then {
 
         _array resize _huntingUnits;
 
-        //  et on créé un nouveau groupe
+        // Then we create a new group based on this array.
         _group = [_freePos, _side, [_array, {typeOf _x}] call CBA_fnc_filter] call BIS_fnc_spawnGroup;
 
         // debug
@@ -36,38 +36,37 @@ if (({alive _x} count (units _group)) == 0) then {
             CORP_var_hunters_hunters = _group;
         };
 
+        // For each unit of the group.
         {
-            // copie de l'équipement des unités parentes
+            // Cloning parent units' gear.
             _x setUnitLoadout [getUnitLoadout (selectRandom _parentUnits), true];
 
-            // event handler pour chaque unité du groupe quand tuée
+            // Event hander when killed.
             private _id = _x addEventHandler ["Killed", {
                 private _unit	= _this select 0;
                 private _logic	= _unit getVariable [HUNTERS_LOGIC_KEY, objNull];
                 private _group	= group _unit;
 
-                // on exécute cette fonction qui va vérifier s'il n'y a plus d'unités vivantes dans le groupe
-                // et le cas échéant, en créer un nouveau
+                // This function check if the group is dead, if yes it creates a new group.
                 [_group, _logic, getPosASL _unit] call CORP_fnc_hunters_checkAndCreateHunters;
 
-                // on supprime l'event handler
+                // Remove the event handler.
                 _unit removeEventHandler ["Killed", (_unit getVariable EVENT_HANDLER_ID_KEY)];
 
-                // on détruit les variable de l'unité
+                // Destroy unit's variables.
                 _unit setVariable [EVENT_HANDLER_ID_KEY, nil];
                 _unit setVariable [HUNTERS_LOGIC_KEY, nil];
 
-                // l'unité tuée quitte le groupe
-                // de cette manière, les unités mortes ne seront pas prises en compte dans le calcul de l'isobarycentre
+                // The killed unit is moved out of the group so it doesn't affects the isobarycenter.
                 [_unit] join grpNull;
             }];
 
-            // on conserve l'id de l'event handler pour pouvoir le supprimer dans l'event handler
+            // We store the ID of the event handler so we can delete it inside the event handler.
             _x setVariable [EVENT_HANDLER_ID_KEY, _id];
             _x setVariable [HUNTERS_LOGIC_KEY, _logic];
         } forEach (units _group);
 
-        // comportement et points de passage du groupe
+        // Behaviour and waypoints of the group.
         [_group, _logic] call CORP_fnc_hunters_huntersBehaviour;
     };
 };
