@@ -1,3 +1,8 @@
+/*
+    CORP's Mission Editing Tools
+    http://www.corp-arma.fr
+*/
+
 #define EVENT_HANDLER_ID_KEY "CORP_hunters_killedEventHandlerId"
 #define HUNTERS_LOGIC_KEY "CORP_hunters_huntersLogic"
 
