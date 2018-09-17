@@ -1,3 +1,8 @@
+/*
+    CORP's Mission Editing Tools
+    http://www.corp-arma.fr
+*/
+
 #define SEARCH_DISTANCE 1000
 #define WAYPOINT_COMPLETION 20
 
