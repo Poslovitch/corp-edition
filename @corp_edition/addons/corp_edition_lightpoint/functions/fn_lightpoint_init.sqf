@@ -1,9 +1,9 @@
 if (!hasInterface) exitWith {};
 
-_mode  = param [0,"",[""]];
-_input = param [1,[],[[]]];
+_mode  = param [0, "", [""]];
+_input = param [1, [], [[]]];
 
-_logic = _input param [0,objNull,[objNull]];
+_logic = _input param [0, objNull, [objNull]];
 
 _red              = _logic getVariable ["Red", 256];
 _green            = _logic getVariable ["Green", 256];
