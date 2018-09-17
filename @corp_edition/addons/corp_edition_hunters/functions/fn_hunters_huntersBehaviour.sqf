@@ -5,8 +5,8 @@ private _group = param [0, grpNull, [grpNull]];
 private _logic = param [1, objNull, [objNull]];
 
 // We check for player near the hunting group.
-private _huntersCentroid	= [units _group, {getPosASL _x}] call CBA_fnc_filter;
-private _players			= [_huntersCentroid call CORP_fnc_centroid, SEARCH_DISTANCE, [west]] call CORP_fnc_alivePlayersRadius;
+private _huntersCentroid = [units _group, {getPosASL _x}] call CBA_fnc_filter;
+private _players         = [_huntersCentroid call CORP_fnc_centroid, SEARCH_DISTANCE, [west]] call CORP_fnc_alivePlayersRadius;
 
 // If there are players near the hunting group.
 if ((count _players) > 0) then {
