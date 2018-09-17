@@ -1,18 +1,18 @@
-private _logic		= param [0, objNull, [objNull]];
-private _units		= param [1, [], [[]]];
-private _triggers	= _logic call BIS_fnc_moduleTriggers;
+private _logic    = param [0, objNull, [objNull]];
+private _units    = param [1, [], [[]]];
+private _triggers = _logic call BIS_fnc_moduleTriggers;
 
 if (count _units == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_HUNTERS_DN", _logic, localize "STR_CORP_CORE_NO_UNIT_SYNCHED"]] call BIS_fnc_error;};
 if (count _triggers == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_HUNTERS_DN", _logic, localize "STR_CORP_CORE_NO_TRIGGER_SYNCHED"]] call BIS_fnc_error;};
 
-private _huntingUnits		= _logic getVariable ["HuntingUnits", 4];
-private _respawnDistance	= _logic getVariable ["RespawnDistance", 300];
-private _condition			= _logic getVariable ["Condition", "true"];
-private _debug				= _logic getVariable ["Debug", false];
+private _huntingUnits    = _logic getVariable ["HuntingUnits", 4];
+private _respawnDistance = _logic getVariable ["RespawnDistance", 300];
+private _condition       = _logic getVariable ["Condition", "true"];
+private _debug           = _logic getVariable ["Debug", false];
 
-private _trigger	= _triggers select 0;
-private _units		= _units call CORP_fnc_getGroupedUnits;
-private _side		= side (_units select 0);
+private _trigger = _triggers select 0;
+private _units   = _units call CORP_fnc_getGroupedUnits;
+private _side    = side (_units select 0);
 
 // Holds every parameters of every hunts.
 if (isNil {CORP_var_hunters_hunts}) then {
