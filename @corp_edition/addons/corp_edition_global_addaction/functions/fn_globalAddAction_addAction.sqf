@@ -42,7 +42,16 @@ if (isServer) then {
     // If isDedicated, brodcast this function to clients.
     // In Eden, the rest of the function will be executed, it's not necessary to brodcast.
     if (isDedicated) then {
-        [_object, _text, _clientExpression, _serverExpression, _distance, _deleteObject, _removeAction, _label] remoteExec ["CORP_fnc_globalAddAction_addAction", -2, true];
+        [
+            _object,
+            _text,
+            _clientExpression,
+            _serverExpression,
+            _distance,
+            _deleteObject,
+            _removeAction,
+            _label
+        ] remoteExec ["CORP_fnc_globalAddAction_addAction", -2, true];
     };
 };
 
