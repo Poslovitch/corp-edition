@@ -1,3 +1,8 @@
+/*
+    CORP's Mission Editing Tools
+    http://www.corp-arma.fr
+*/
+
 private _logic    = param [0, objNull, [objNull]];
 private _units    = param [1, [], [[]]];
 private _triggers = _logic call BIS_fnc_moduleTriggers;
