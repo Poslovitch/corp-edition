@@ -30,6 +30,7 @@ if (({alive _x} count (units _group)) == 0) then {
 
         // Then we create a new group based on this array.
         _group = [_freePos, _side, [_array, {typeOf _x}] call CBA_fnc_filter] call BIS_fnc_spawnGroup;
+        _group deleteGroupWhenEmpty true;
 
         // debug
         if !(isNil {CORP_var_hunters_hunters}) then {
