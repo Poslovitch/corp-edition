@@ -1,3 +1,8 @@
+/*
+    CORP's Mission Editing Tools
+    http://www.corp-arma.fr
+*/
+
 if (!hasInterface) exitWith {};
 
 private _logic   = param [0, objNull, [objNull]];
