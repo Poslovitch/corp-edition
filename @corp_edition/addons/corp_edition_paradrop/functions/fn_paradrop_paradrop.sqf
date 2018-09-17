@@ -1,3 +1,8 @@
+/*
+    CORP's Mission Editing Tools
+    http://www.corp-arma.fr
+*/
+
 sleep (_this select 0);
 
 cutText ["", "BLACK OUT", 1];
