@@ -1,3 +1,7 @@
+/*
+    CORP's Mission Editing Tools
+    http://www.corp-arma.fr
+*/
 
 if (CORP_var_paraJumpClassic_marker != "") then {
     deleteMarkerLocal CORP_var_paraJumpClassic_marker;
