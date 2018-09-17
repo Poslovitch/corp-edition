@@ -1,21 +1,21 @@
 if (!hasInterface) exitWith {};
 
-_mode	= param [0,"",[""]];
-_input	= param [1,[],[[]]];
+_mode  = param [0,"",[""]];
+_input = param [1,[],[[]]];
 
 _logic = _input param [0,objNull,[objNull]];
 
-_red				= _logic getVariable ["Red", 255];
-_green				= _logic getVariable ["Green", 255];
-_blue				= _logic getVariable ["Blue", 255];
-_brightness			= _logic getVariable ["Brightness", 1];
-_useFlare			= _logic getVariable ["UseFlare", false];
-_flareSize			= _logic getVariable ["FlareSize", 1];
-_flareMaxDistance	= _logic getVariable ["FlareMaxDistance", 250];
+_red              = _logic getVariable ["Red", 255];
+_green            = _logic getVariable ["Green", 255];
+_blue             = _logic getVariable ["Blue", 255];
+_brightness       = _logic getVariable ["Brightness", 1];
+_useFlare         = _logic getVariable ["UseFlare", false];
+_flareSize        = _logic getVariable ["FlareSize", 1];
+_flareMaxDistance = _logic getVariable ["FlareMaxDistance", 250];
 
-_red	= _red / 255;
-_green	= _green / 255;
-_blue	=_blue / 255;
+_red   = _red / 255;
+_green = _green / 255;
+_blue  =_blue / 255;
 
 switch _mode do {
     // mission
