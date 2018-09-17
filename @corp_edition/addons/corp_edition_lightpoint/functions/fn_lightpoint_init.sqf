@@ -1,3 +1,8 @@
+/*
+    CORP's Mission Editing Tools
+    http://www.corp-arma.fr
+*/
+
 if (!hasInterface) exitWith {};
 
 _mode  = param [0, "", [""]];
