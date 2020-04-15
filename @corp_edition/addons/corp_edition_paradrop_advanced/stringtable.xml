@@ -4,7 +4,7 @@
         <Container name="modules">
 
             <Key ID="STR_CORP_PARADROP_ADVANCED_DN">
-                <Original>Advaced paradrop</Original>
+                <Original>Advanced paradrop</Original>
                 <French>Saut en parachute avancé</French>
             </Key>
 
