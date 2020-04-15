@@ -14,7 +14,7 @@
                 <French>Nombre d'unités</French>
             </Key>
 
-            <Key ID="STR_CORP_BUILDINGS_OCCUPATION_NUMBER_OF_UNITS_DESC">
+            <Key ID="STR_CORP_BUILDINGS_OCCUPATION_NUMBER_OF_UNITS_TOOLTIP">
                 <Original>Number of units</Original>
                 <French>Nombre d'unités</French>
             </Key>
@@ -25,7 +25,7 @@
                 <French>Unités statiques</French>
             </Key>
 
-            <Key ID="STR_CORP_BUILDINGS_OCCUPATION_KEEP_POSITION_DESC">
+            <Key ID="STR_CORP_BUILDINGS_OCCUPATION_KEEP_POSITION_TOOLTIP">
                 <Original>Percentage of units that keep its position</Original>
                 <French>Pourcentage d'unités qui reste en place</French>
             </Key>
@@ -36,7 +36,7 @@
                 <French>Distance de réactivation</French>
             </Key>
 
-            <Key ID="STR_CORP_BUILDINGS_OCCUPATION_RESUME_DISTANCE_DESC">
+            <Key ID="STR_CORP_BUILDINGS_OCCUPATION_RESUME_DISTANCE_TOOLTIP">
                 <Original>Distance between player and unit at which static unit start to move back</Original>
                 <French>Distance entre un joueur et l'unité à partir de laquelle l'unité statique se remet à bouger</French>
             </Key>
@@ -47,7 +47,7 @@
                 <French>Simulation dynamique</French>
             </Key>
 
-            <Key ID="STR_CORP_BUILDINGS_OCCUPATION_DYNAMIC_SIMULATION_DESC">
+            <Key ID="STR_CORP_BUILDINGS_OCCUPATION_DYNAMIC_SIMULATION_TOOLTIP">
                 <Original>Enables dynamic simulation for created groups</Original>
                 <French>activer la Simulation Dynamique pour les groupes créés par le module</French>
             </Key>
@@ -58,7 +58,7 @@
                 <French>Débug unités</French>
             </Key>
 
-            <Key ID="STR_CORP_BUILDINGS_OCCUPATION_DEBUG_UNITS_DESC">
+            <Key ID="STR_CORP_BUILDINGS_OCCUPATION_DEBUG_UNITS_TOOLTIP">
                 <Original>Draws areas and AIs of map</Original>
                 <French>Sur carte, déssine les zones et les IA créées</French>
             </Key>
@@ -69,7 +69,7 @@
                 <French>Débug bâtiments</French>
             </Key>
 
-            <Key ID="STR_CORP_BUILDINGS_OCCUPATION_DEBUG_BUILDINGS_DESC">
+            <Key ID="STR_CORP_BUILDINGS_OCCUPATION_DEBUG_BUILDINGS_TOOLTIP">
                 <Original>On map, draws buildings and indicate if they are in the database or not</Original>
                 <French>Sur carte, indique si les bâtiments de la zone sont référencés dans la base de données</French>
             </Key>

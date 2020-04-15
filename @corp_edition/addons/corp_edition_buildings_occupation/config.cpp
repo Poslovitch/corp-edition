@@ -2,7 +2,7 @@ class CfgPatches {
     class CORP_Edition_Buildings_Occupation {
         units[] = {"CORP_Module_BuildingsOccupation"};
         author = "CORP Modding Studio";
-        requiredVersion = 1.66;
+        requiredVersion = 1.98;
         requiredAddons[] = {"A3_Modules_F", "A3_3DEN", "corp_edition_core", "cba_arrays"};
     };
 };
@@ -78,7 +78,7 @@ class CfgVehicles {
             class NumberOfUnits: Edit {
                 property = "CORP_Module_BuildingsOccupation_NumberOfUnits";
                 displayName = $STR_CORP_BUILDINGS_OCCUPATION_NUMBER_OF_UNITS_DN;
-                description = $STR_CORP_BUILDINGS_OCCUPATION_NUMBER_OF_UNITS_DESC;
+                tooltip = $STR_CORP_BUILDINGS_OCCUPATION_NUMBER_OF_UNITS_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "10";
             };
@@ -86,7 +86,7 @@ class CfgVehicles {
             class KeepPosition: Edit {
                 property = "CORP_Module_BuildingsOccupation_KeepPosition";
                 displayName = $STR_CORP_BUILDINGS_OCCUPATION_KEEP_POSITION_DN;
-                description = $STR_CORP_BUILDINGS_OCCUPATION_KEEP_POSITION_DESC;
+                tooltip = $STR_CORP_BUILDINGS_OCCUPATION_KEEP_POSITION_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "0.5";
                 control = "Slider";
@@ -95,7 +95,7 @@ class CfgVehicles {
             class ResumeDistance: Edit {
                 property = "CORP_Module_BuildingsOccupation_ResumeDistance";
                 displayName = $STR_CORP_BUILDINGS_OCCUPATION_RESUME_DISTANCE_DN;
-                description = $STR_CORP_BUILDINGS_OCCUPATION_RESUME_DISTANCE_DESC;
+                tooltip = $STR_CORP_BUILDINGS_OCCUPATION_RESUME_DISTANCE_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "25";
                 control = "SliderBuildingsOccupationResumeDistance";
@@ -104,7 +104,7 @@ class CfgVehicles {
             class DynamicSimulation: Checkbox {
                 property = "CORP_Module_BuildingsOccupation_DynamicSimulation";
                 displayName = $STR_CORP_BUILDINGS_OCCUPATION_DYNAMIC_SIMULATION_DN;
-                description = $STR_CORP_BUILDINGS_OCCUPATION_DYNAMIC_SIMULATION_DESC;
+                tooltip = $STR_CORP_BUILDINGS_OCCUPATION_DYNAMIC_SIMULATION_TOOLTIP;
                 typeName = "BOOL";
                 defaultValue = "true";
             };
@@ -112,7 +112,7 @@ class CfgVehicles {
             class DebugUnits: Checkbox {
                 property = "CORP_Module_BuildingsOccupation_DebugUnits";
                 displayName = $STR_CORP_BUILDINGS_OCCUPATION_DEBUG_UNITS_DN;
-                description = $STR_CORP_BUILDINGS_OCCUPATION_DEBUG_UNITS_DESC;
+                tooltip = $STR_CORP_BUILDINGS_OCCUPATION_DEBUG_UNITS_TOOLTIP;
                 typeName = "BOOL";
                 defaultValue = "false";
             };
@@ -120,7 +120,7 @@ class CfgVehicles {
             class DebugBuildings: Checkbox {
                 property = "CORP_Module_BuildingsOccupation_DebugBuildings";
                 displayName = $STR_CORP_BUILDINGS_OCCUPATION_DEBUG_BUILDINGS_DN;
-                description = $STR_CORP_BUILDINGS_OCCUPATION_DEBUG_BUILDINGS_DESC;
+                tooltip = $STR_CORP_BUILDINGS_OCCUPATION_DEBUG_BUILDINGS_TOOLTIP;
                 typeName = "BOOL";
                 defaultValue = "false";
             };

@@ -2,7 +2,7 @@ class CfgPatches {
     class CORP_Edition_Paradrop {
         units[] = {"CORP_Module_Paradrop"};
         author = "CORP Modding Studio";
-        requiredVersion = 1.66;
+        requiredVersion = 1.98;
         requiredAddons[] = {"A3_Modules_F", "corp_edition_core"};
     };
 };

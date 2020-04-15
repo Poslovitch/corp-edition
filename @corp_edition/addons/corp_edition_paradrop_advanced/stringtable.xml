@@ -14,7 +14,7 @@
                 <French>Saut personnalisé</French>
             </Key>
 
-            <Key ID="STR_CORP_PARADROP_ADVANCED_CUSTOM_DROP_DESC">
+            <Key ID="STR_CORP_PARADROP_ADVANCED_CUSTOM_DROP_TOOLTIP">
                 <Original>Custom drop</Original>
                 <French>Saut personnalisé</French>
             </Key>

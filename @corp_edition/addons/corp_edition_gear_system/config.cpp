@@ -2,7 +2,7 @@ class CfgPatches {
     class crp_cgs {
         units[] = {"CORP_Module_GearSystem"};
         author = "CORP Modding Studio";
-        requiredVersion = 1.66;
+        requiredVersion = 1.98;
         requiredAddons[] = {"A3_Modules_F", "corp_edition_core"};
     };
 };

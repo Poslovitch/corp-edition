@@ -7,7 +7,7 @@ class CfgPatches {
     class CORP_Edition_Lightpoint {
         units[] = {"CORP_Module_Lightpoint"};
         author = "CORP Modding Studio";
-        requiredVersion = 1.66;
+        requiredVersion = 1.98;
         requiredAddons[] = {"A3_Modules_F", "A3_3DEN", "corp_edition_core"};
     };
 };
@@ -120,7 +120,7 @@ class CfgVehicles {
             class Red: Edit {
                 property = "CORP_Module_Lightpoint_Red";
                 displayName = $STR_CORP_LIGHTPOINT_RED_DN;
-                description = $STR_CORP_LIGHTPOINT_RED_DESC;
+                tooltip = $STR_CORP_LIGHTPOINT_RED_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "255";
                 control = "SliderLightpointColor";
@@ -128,7 +128,7 @@ class CfgVehicles {
             class Green: Edit {
                 property = "CORP_Module_Lightpoint_Green";
                 displayName = $STR_CORP_LIGHTPOINT_GREEN_DN;
-                description = $STR_CORP_LIGHTPOINT_GREEN_DESC;
+                tooltip = $STR_CORP_LIGHTPOINT_GREEN_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "255";
                 control = "SliderLightpointColor";
@@ -136,7 +136,7 @@ class CfgVehicles {
             class Blue: Edit {
                 property = "CORP_Module_Lightpoint_Blue";
                 displayName = $STR_CORP_LIGHTPOINT_BLUE_DN;
-                description = $STR_CORP_LIGHTPOINT_BLUE_DESC;
+                tooltip = $STR_CORP_LIGHTPOINT_BLUE_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "255";
                 control = "SliderLightpointColor";
@@ -144,7 +144,7 @@ class CfgVehicles {
             class Brightness: Edit {
                 property = "CORP_Module_Lightpoint_Brightness";
                 displayName = $STR_CORP_LIGHTPOINT_BRIGHTNESS_DN;
-                description = $STR_CORP_LIGHTPOINT_BRIGHTNESS_DESC;
+                tooltip = $STR_CORP_LIGHTPOINT_BRIGHTNESS_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "1";
                 control = "SliderLightpointBrightness";
@@ -152,14 +152,14 @@ class CfgVehicles {
             class UseFlare: Checkbox {
                 property = "CORP_Module_Lightpoint_UseFlare";
                 displayName = $STR_CORP_LIGHTPOINT_USE_FLARE_DN;
-                description = $STR_CORP_LIGHTPOINT_USE_FLARE_DESC;
+                tooltip = $STR_CORP_LIGHTPOINT_USE_FLARE_TOOLTIP;
                 typeName = "BOOL";
                 defaultValue = "false";
             };
             class FlareSize: Edit {
                 property = "CORP_Module_Lightpoint_FlareSize";
                 displayName = $STR_CORP_LIGHTPOINT_FLARE_SIZE_DN;
-                description = $STR_CORP_LIGHTPOINT_FLARE_SIZE_DESC;
+                tooltip = $STR_CORP_LIGHTPOINT_FLARE_SIZE_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "1";
                 control = "SliderLightpointBrightness";
@@ -167,7 +167,7 @@ class CfgVehicles {
             class FlareMaxDistance: Edit {
                 property = "CORP_Module_Lightpoint_FlareMaxDistance";
                 displayName = $STR_CORP_LIGHTPOINT_FLARE_MAX_DISTANCE_DN;
-                description = $STR_CORP_LIGHTPOINT_FLARE_MAX_DISTANCE_DESC;
+                tooltip = $STR_CORP_LIGHTPOINT_FLARE_MAX_DISTANCE_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "250";
                 control = "SliderLightpointFlareDistance";

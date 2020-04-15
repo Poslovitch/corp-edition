@@ -2,7 +2,7 @@ class CfgPatches {
     class CORP_Edition_Teleport_To_Position {
         units[] = {"CORP_Module_TeleportToPosition"};
         author = "CORP Modding Studio";
-        requiredVersion = 1.66;
+        requiredVersion = 1.98;
         requiredAddons[] = {"A3_Modules_F", "corp_edition_core"};
     };
 };
@@ -47,7 +47,7 @@ class CfgVehicles {
             class ActionText: Edit {
                 property = "CORP_Module_TeleportToPosition_ActionText";
                 displayName = $STR_CORP_TELEPORT_TO_POSITION_ACTION_TEXT_DN;
-                description = $STR_CORP_TELEPORT_TO_POSITION_ACTION_TEXT_DESC;
+                tooltip = $STR_CORP_TELEPORT_TO_POSITION_ACTION_TEXT_TOOLTIP;
                 typeName = "STRING";
                 defaultValue = """Action""";
             };
@@ -55,7 +55,7 @@ class CfgVehicles {
             class ActionDistance: Edit {
                 property = "CORP_Module_TeleportToPosition_ActionDistance";
                 displayName = $STR_CORP_TELEPORT_TO_POSITION_ACTION_DISTANCE_DN;
-                description = $STR_CORP_TELEPORT_TO_POSITION_ACTION_DISTANCE_DESC;
+                tooltip = $STR_CORP_TELEPORT_TO_POSITION_ACTION_DISTANCE_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "3";
                 control = "SliderAddactionDistance";
@@ -64,7 +64,7 @@ class CfgVehicles {
             class TeleportPosition: Edit {
                 property = "CORP_Module_TeleportToPosition_TeleportPosition";
                 displayName = $STR_CORP_TELEPORT_TO_POSITION_TELEPORT_POSITION_DN;
-                description = $STR_CORP_TELEPORT_TO_POSITION_TELEPORT_POSITION_DESC;
+                tooltip = $STR_CORP_TELEPORT_TO_POSITION_TELEPORT_POSITION_TOOLTIP;
                 typeName = "STRING";
                 defaultValue = """[0, 0, 0]""";
             };
@@ -72,7 +72,7 @@ class CfgVehicles {
             class TeleportDirection: Edit {
                 property = "CORP_Module_TeleportToPosition_TeleportDirection";
                 displayName = $STR_CORP_TELEPORT_TO_POSITION_TELEPORT_DIRECTION_DN;
-                description = $STR_CORP_TELEPORT_TO_POSITION_TELEPORT_DIRECTION_DESC;
+                tooltip = $STR_CORP_TELEPORT_TO_POSITION_TELEPORT_DIRECTION_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "0";
             };

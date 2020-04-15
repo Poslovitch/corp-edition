@@ -14,7 +14,7 @@
                 <French>Nombre d'unités en chasse</French>
             </Key>
 
-            <Key ID="STR_CORP_HUNTERS_HUNTING_UNITS_DESC">
+            <Key ID="STR_CORP_HUNTERS_HUNTING_UNITS_TOOLTIP">
                 <Original>Number of hunting units</Original>
                 <French>Nombre d'unités en chasse</French>
             </Key>
@@ -25,7 +25,7 @@
                 <French>Distance de respawn</French>
             </Key>
 
-            <Key ID="STR_CORP_HUNTERS_RESPAWN_DISTANCE_DESC">
+            <Key ID="STR_CORP_HUNTERS_RESPAWN_DISTANCE_TOOLTIP">
                 <Original>Hunters respawn distance</Original>
                 <French>Distance de respawn du groupe de chasse</French>
             </Key>
@@ -36,7 +36,7 @@
                 <French>Condition</French>
             </Key>
 
-            <Key ID="STR_CORP_HUNTERS_CONDITION_DESC">
+            <Key ID="STR_CORP_HUNTERS_CONDITION_TOOLTIP">
                 <Original>Expression in string, if the condition is no longer fulfiled, hunters won't respawn anymore</Original>
                 <French>Expression sous forme de chaîne, si cette condition n'est plus remplie, le groupe de chasse ne respawnera plus</French>
             </Key>
@@ -47,7 +47,7 @@
                 <French>Débug</French>
             </Key>
 
-            <Key ID="STR_CORP_HUNTERS_DEBUG_DESC">
+            <Key ID="STR_CORP_HUNTERS_DEBUG_TOOLTIP">
                 <Original>Draws area and hunters on map</Original>
                 <French>Sur carte, dessine la zone et le groupe de chasse créés</French>
             </Key>

@@ -18,7 +18,7 @@
                 <French>Texte de l'action</French>
             </Key>
 
-            <Key ID="STR_CORP_TELEPORT_TO_POSITION_ACTION_TEXT_DESC">
+            <Key ID="STR_CORP_TELEPORT_TO_POSITION_ACTION_TEXT_TOOLTIP">
                 <Original>Action text</Original>
                 <French>Texte de l'action</French>
             </Key>
@@ -29,7 +29,7 @@
                 <French>Distance de l'action</French>
             </Key>
 
-            <Key ID="STR_CORP_TELEPORT_TO_POSITION_ACTION_DISTANCE_DESC">
+            <Key ID="STR_CORP_TELEPORT_TO_POSITION_ACTION_DISTANCE_TOOLTIP">
                 <Original>Action distance</Original>
                 <French>Distance de l'action</French>
             </Key>
@@ -40,7 +40,7 @@
                 <French>Position de téléportation (ASL)</French>
             </Key>
 
-            <Key ID="STR_CORP_TELEPORT_TO_POSITION_TELEPORT_POSITION_DESC">
+            <Key ID="STR_CORP_TELEPORT_TO_POSITION_TELEPORT_POSITION_TOOLTIP">
                 <Original>Teleport position (ASL)</Original>
                 <French>Position de téléportation (ASL)</French>
             </Key>
@@ -51,7 +51,7 @@
                 <French>Direction de téléportation</French>
             </Key>
 
-            <Key ID="STR_CORP_TELEPORT_TO_POSITION_TELEPORT_DIRECTION_DESC">
+            <Key ID="STR_CORP_TELEPORT_TO_POSITION_TELEPORT_DIRECTION_TOOLTIP">
                 <Original>Teleport direction</Original>
                 <French>Direction de téléportatio</French>
             </Key>

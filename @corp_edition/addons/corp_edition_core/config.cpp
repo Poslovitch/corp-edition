@@ -2,7 +2,7 @@ class CfgPatches {
     class CORP_Edition_Core {
         units[] = {};
         author = "CORP Modding Studio";
-        requiredVersion = 1.66;
+        requiredVersion = 1.98;
         requiredAddons[] = {"A3_3DEN"};
     };
 };

@@ -7,7 +7,7 @@ class CfgPatches {
     class CORP_Edition_Global_AddAction {
         units[] = {"CORP_Module_GlobalAddaction"};
         author = "CORP Modding Studio";
-        requiredVersion = 1.66;
+        requiredVersion = 1.98;
         requiredAddons[] = {"A3_Modules_F", "A3_3DEN", "corp_edition_core", "cba_strings"};
     };
 };
@@ -54,7 +54,7 @@ class CfgVehicles {
             class ActionText: Edit {
                 property = "CORP_Module_GlobalAddAction_ActionText";
                 displayName = $STR_CORP_GLOBAL_ADDACTION_ACTION_TEXT_DN;
-                description = $STR_CORP_GLOBAL_ADDACTION_ACTION_TEXT_DESC;
+                tooltip = $STR_CORP_GLOBAL_ADDACTION_ACTION_TEXT_TOOLTIP;
                 typeName = "STRING";
                 defaultValue = """Action""";
             };
@@ -62,7 +62,7 @@ class CfgVehicles {
             class ServerExpression: Edit {
                 property = "CORP_Module_GlobalAddAction_ServerExpression";
                 displayName = $STR_CORP_GLOBAL_ADDACTION_SERVER_EXPRESSION_DN;
-                description = $STR_CORP_GLOBAL_ADDACTION_SERVER_EXPRESSION_DESC;
+                tooltip = $STR_CORP_GLOBAL_ADDACTION_SERVER_EXPRESSION_TOOLTIP;
                 typeName = "STRING";
                 defaultValue = """""";
             };
@@ -70,7 +70,7 @@ class CfgVehicles {
             class ClientExpression: Edit {
                 property = "CORP_Module_GlobalAddAction_ClientExpression";
                 displayName = $STR_CORP_GLOBAL_ADDACTION_CLIENT_EXPRESSION_DN;
-                description = $STR_CORP_GLOBAL_ADDACTION_CLIENT_EXPRESSION_DESC;
+                tooltip = $STR_CORP_GLOBAL_ADDACTION_CLIENT_EXPRESSION_TOOLTIP;
                 typeName = "STRING";
                 defaultValue = """""";
             };
@@ -78,7 +78,7 @@ class CfgVehicles {
             class ActionDistance: Edit {
                 property = "CORP_Module_GlobalAddAction_ActionDistance";
                 displayName = $STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_DN;
-                description = $STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_DESC;
+                tooltip = $STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "3";
                 control = "SliderAddactionDistance";
@@ -87,7 +87,7 @@ class CfgVehicles {
             class DeleteObject: Checkbox {
                 property = "CORP_Module_GlobalAddAction_DeleteObject";
                 displayName = $STR_CORP_GLOBAL_ADDACTION_DELETE_OBJECT_DN;
-                description = $STR_CORP_GLOBAL_ADDACTION_DELETE_OBJECT_DESC;
+                tooltip = $STR_CORP_GLOBAL_ADDACTION_DELETE_OBJECT_TOOLTIP;
                 typeName = "BOOL";
                 defaultValue = "false";
             };
@@ -95,7 +95,7 @@ class CfgVehicles {
             class RemoveAction: Checkbox {
                 property = "CORP_Module_GlobalAddAction_RemoveAction";
                 displayName = $STR_CORP_GLOBAL_ADDACTION_REMOVE_ACTION_DN;
-                description = $STR_CORP_GLOBAL_ADDACTION_REMOVE_ACTION_DESC;
+                tooltip = $STR_CORP_GLOBAL_ADDACTION_REMOVE_ACTION_TOOLTIP;
                 typeName = "BOOL";
                 defaultValue = "false";
             };

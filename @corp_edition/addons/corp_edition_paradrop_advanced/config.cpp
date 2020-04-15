@@ -7,7 +7,7 @@ class CfgPatches {
     class CORP_Edition_Paradrop_Advanced {
         units[] = {"CORP_Module_Paradrop_Advanced"};
         author = "CORP Modding Studio";
-        requiredVersion = 1.66;
+        requiredVersion = 1.98;
         requiredAddons[] = {"A3_Modules_F", "corp_edition_core"};
     };
 };
@@ -64,7 +64,7 @@ class CfgVehicles {
             class CustomDrop: Checkbox {
                 property = "CORP_Module_ParadropAdvanced_CustomDrop";
                 displayName = $STR_CORP_PARADROP_ADVANCED_CUSTOM_DROP_DN;
-                description = $STR_CORP_PARADROP_ADVANCED_CUSTOM_DROP_DESC;
+                tooltip = $STR_CORP_PARADROP_ADVANCED_CUSTOM_DROP_TOOLTIP;
                 typeName = "BOOL";
                 defaultValue = "false";
             };

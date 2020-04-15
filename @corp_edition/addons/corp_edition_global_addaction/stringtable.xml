@@ -14,7 +14,7 @@
                 <French>Texte de l'action</French>
             </Key>
 
-            <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_TEXT_DESC">
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_TEXT_TOOLTIP">
                 <Original>Action text</Original>
                 <French>Texte de l'action</French>
             </Key>
@@ -25,7 +25,7 @@
                 <French>Expression serveur</French>
             </Key>
 
-            <Key ID="STR_CORP_GLOBAL_ADDACTION_SERVER_EXPRESSION_DESC">
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_SERVER_EXPRESSION_TOOLTIP">
                 <Original>Server expression</Original>
                 <French>Expression serveur</French>
             </Key>
@@ -36,7 +36,7 @@
                 <French>Expression client</French>
             </Key>
 
-            <Key ID="STR_CORP_GLOBAL_ADDACTION_CLIENT_EXPRESSION_DESC">
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_CLIENT_EXPRESSION_TOOLTIP">
                 <Original>Client expression</Original>
                 <French>Expression client</French>
             </Key>
@@ -47,7 +47,7 @@
                 <French>Distance de l'action</French>
             </Key>
 
-            <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_DESC">
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_TOOLTIP">
                 <Original>Action distance</Original>
                 <French>Distance de l'action</French>
             </Key>
@@ -58,7 +58,7 @@
                 <French>Supprimer l'objet</French>
             </Key>
 
-            <Key ID="STR_CORP_GLOBAL_ADDACTION_DELETE_OBJECT_DESC">
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_DELETE_OBJECT_TOOLTIP">
                 <Original>Delete object</Original>
                 <French>Supprimer l'objet</French>
             </Key>
@@ -69,7 +69,7 @@
                 <French>Retirer l'action</French>
             </Key>
 
-            <Key ID="STR_CORP_GLOBAL_ADDACTION_REMOVE_ACTION_DESC">
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_REMOVE_ACTION_TOOLTIP">
                 <Original>Remove action</Original>
                 <French>Retirer l'action</French>
             </Key>

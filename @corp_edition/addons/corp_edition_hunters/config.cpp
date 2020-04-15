@@ -2,7 +2,7 @@ class CfgPatches {
     class CORP_Edition_Hunters {
         units[] = {"CORP_Module_Hunters"};
         author = "CORP Modding Studio";
-        requiredVersion = 1.66;
+        requiredVersion = 1.98;
         requiredAddons[] = {"A3_Modules_F", "A3_3DEN", "corp_edition_core", "cba_arrays"};
     };
 };
@@ -73,7 +73,7 @@ class CfgVehicles {
             class HuntingUnits: Edit {
                 property = "CORP_Module_Hunters_HuntingUnits";
                 displayName = $STR_CORP_HUNTERS_HUNTING_UNITS_DN;
-                description = $STR_CORP_HUNTERS_HUNTING_UNITS_DESC;
+                tooltip = $STR_CORP_HUNTERS_HUNTING_UNITS_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "4";
             };
@@ -81,7 +81,7 @@ class CfgVehicles {
             class RespawnDistance: Edit {
                 property = "CORP_Module_Hunters_RespawnDistance";
                 displayName = $STR_CORP_HUNTERS_RESPAWN_DISTANCE_DN;
-                description = $STR_CORP_HUNTERS_RESPAWN_DISTANCE_DESC;
+                tooltip = $STR_CORP_HUNTERS_RESPAWN_DISTANCE_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "300";
                 control = "SliderHuntersDistance";
@@ -90,7 +90,7 @@ class CfgVehicles {
             class Condition: Edit {
                 property = "CORP_Module_Hunters_Condition";
                 displayName = $STR_CORP_HUNTERS_CONDITION_DN;
-                description = $STR_CORP_HUNTERS_CONDITION_DESC;
+                tooltip = $STR_CORP_HUNTERS_CONDITION_TOOLTIP;
                 typeName = "STRING";
                 defaultValue = """true""";
             };
@@ -98,7 +98,7 @@ class CfgVehicles {
             class Debug: Checkbox {
                 property = "CORP_Module_Hunters_Debug";
                 displayName = $STR_CORP_HUNTERS_DEBUG_DN;
-                description = $STR_CORP_HUNTERS_DEBUG_DESC;
+                tooltip = $STR_CORP_HUNTERS_DEBUG_TOOLTIP;
                 typeName = "BOOL";
                 defaultValue = "false";
             };

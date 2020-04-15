@@ -2,7 +2,7 @@ class CfgPatches {
     class CORP_Edition_Area_Patrols {
         units[] = {"CORP_Module_AreaPatrols"};
         author = "CORP Modding Studio";
-        requiredVersion = 1.66;
+        requiredVersion = 1.98;
         requiredAddons[] = {
             "A3_Modules_F",
             "CORP_Edition_Core",
@@ -59,7 +59,7 @@ class CfgVehicles {
             class NumberOfGroups: Edit {
                 property = "CORP_Module_AreaPatrols_NumberOfGroups";
                 displayName = $STR_CORP_AREA_PATROLS_NUMBER_OF_GROUPS_DN;
-                description = $STR_CORP_AREA_PATROLS_NUMBER_OF_GROUPS_DESC;
+                tooltip = $STR_CORP_AREA_PATROLS_NUMBER_OF_GROUPS_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "4";
             };
@@ -67,7 +67,7 @@ class CfgVehicles {
             class UnitsPerGroup: Edit {
                 property = "CORP_Module_AreaPatrols_UnitsPerGroup";
                 displayName = $STR_CORP_AREA_PATROLS_UNITS_PER_GROUP_DN;
-                description = $STR_CORP_AREA_PATROLS_UNITS_PER_GROUP_DESC;
+                tooltip = $STR_CORP_AREA_PATROLS_UNITS_PER_GROUP_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "4";
             };
@@ -75,7 +75,7 @@ class CfgVehicles {
             class WaypointsPerGroup: Edit {
                 property = "CORP_Module_AreaPatrols_WaypointsPerGroup";
                 displayName = $STR_CORP_AREA_PATROLS_WAYPOINTS_PER_GROUP_DN;
-                description = $STR_CORP_AREA_PATROLS_WAYPOINTS_PER_GROUP_DESC;
+                tooltip = $STR_CORP_AREA_PATROLS_WAYPOINTS_PER_GROUP_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "4";
             };
@@ -83,7 +83,7 @@ class CfgVehicles {
             class DynamicSimulation: Checkbox {
                 property = "CORP_Module_AreaPatrols_DynamicSimulation";
                 displayName = $STR_CORP_AREA_PATROLS_DYNAMIC_SIMULATION_DN;
-                description = $STR_CORP_AREA_PATROLS_DYNAMIC_SIMULATION_DESC;
+                tooltip = $STR_CORP_AREA_PATROLS_DYNAMIC_SIMULATION_TOOLTIP;
                 typeName = "BOOL";
                 defaultValue = "true";
             };
@@ -91,7 +91,7 @@ class CfgVehicles {
             class Debug: Checkbox {
                 property = "CORP_Module_AreaPatrols_Debug";
                 displayName = $STR_CORP_AREA_PATROLS_DEBUG_DN;
-                description = $STR_CORP_AREA_PATROLS_DEBUG_DESC;
+                tooltip = $STR_CORP_AREA_PATROLS_DEBUG_TOOLTIP;
                 typeName = "BOOL";
                 defaultValue = "false";
             };

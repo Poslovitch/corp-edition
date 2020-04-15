@@ -2,7 +2,7 @@ class CfgPatches {
     class CORP_Edition_Teleport {
         units[] = {"CORP_Module_Teleport"};
         author = "CORP Modding Studio";
-        requiredVersion = 1.66;
+        requiredVersion = 1.98;
         requiredAddons[] = {"A3_Modules_F", "corp_edition_core"};
     };
 };
