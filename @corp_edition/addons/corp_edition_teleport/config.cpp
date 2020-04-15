@@ -51,7 +51,6 @@ class CfgVehicles {
     class ModuleDescription: ModuleDescription {
       description = $STR_CORP_TELEPORT_DESC;
       sync[] = {"AnyStaticObject"};
-      duplicate = 0;
     };
   };
 };
