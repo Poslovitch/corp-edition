@@ -8,6 +8,11 @@
                 <French>Téléportation vers un joueur</French>
             </Key>
 
+            <Key ID="STR_CORP_TELEPORT_DESC">
+                <Original>Adds an action to synchronized objects allowing players to teleport to any other player's location.</Original>
+                <French>Ajoute une action aux objets synchronisés permettant aux joueurs de se téléporter à la position d'un autre joueur.</French>
+            </Key>
+
         </Container>
 
         <Container name="ui">
