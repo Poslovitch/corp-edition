@@ -4,8 +4,8 @@
         <Container name="modules">
 
             <Key ID="STR_CORP_TELEPORT_DN">
-                <Original>Teleport to mate</Original>
-                <French>Téléportation vers un coéquipier</French>
+                <Original>Teleport to player</Original>
+                <French>Téléportation vers un joueur</French>
             </Key>
 
         </Container>
