@@ -17,6 +17,28 @@
 
         <Container name="ui">
 
+          <!-- action text -->
+          <Key ID="STR_CORP_TELEPORT_ACTION_TEXT_DN">
+              <Original>Action text</Original>
+              <French>Texte de l'action</French>
+          </Key>
+
+          <Key ID="STR_CORP_TELEPORT_ACTION_TEXT_TOOLTIP">
+              <Original>Text that will be displayed in the action menu. Keep this field empty if you wish to use the default text.</Original>
+              <French>Le texte qui apparaîtra dans le menu d’action. Laissez vide si vous souhaitez utiliser le texte par défaut.</French>
+          </Key>
+
+          <!-- action distance -->
+          <Key ID="STR_CORP_TELEPORT_ACTION_DISTANCE_DN">
+              <Original>Action display distance</Original>
+              <French>Distance d'affichage de l'action</French>
+          </Key>
+
+          <Key ID="STR_CORP_TELEPORT_ACTION_DISTANCE_TOOLTIP">
+              <Original>The distance between the player and the object for the action to be visible in the action menu.</Original>
+              <French>La distance entre le joueur et l’objet pour que l’action soit visible dans le menu d’action.</French>
+          </Key>
+
             <Key ID="STR_CORP_TELEPORT_TELEPORT">
                 <Original>Teleport</Original>
                 <French>Téléportation</French>

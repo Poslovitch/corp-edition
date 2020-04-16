@@ -23,6 +23,7 @@ class CfgVehicles {
   class Logic;
   class Module_F: Logic {
     class AttributesBase {
+      class Edit;
       class ModuleDescription;
     };
     class ModuleDescription
@@ -45,6 +46,23 @@ class CfgVehicles {
     is3DEN = 0;
 
     class Attributes: AttributesBase {
+      class ActionText: Edit {
+          property = "CORP_Module_Teleport_ActionText";
+          displayName = $STR_CORP_TELEPORT_ACTION_TEXT_DN;
+          tooltip = $STR_CORP_TELEPORT_ACTION_TEXT_TOOLTIP;
+          typeName = "STRING";
+          defaultValue = """"""; // Empty
+      };
+
+      class ActionDistance: Edit {
+          property = "CORP_Module_Teleport_ActionDistance";
+          displayName = $STR_CORP_TELEPORT_ACTION_DISTANCE_DN;
+          tooltip = $STR_CORP_TELEPORT_ACTION_DISTANCE_TOOLTIP;
+          typeName = "NUMBER";
+          defaultValue = "3";
+          control = "SliderAddactionDistance";
+      };
+
       class ModuleDescription: ModuleDescription{};
     };
 
