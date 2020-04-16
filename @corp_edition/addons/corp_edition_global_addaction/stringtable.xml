@@ -8,6 +8,11 @@
                 <French>AddAction globale</French>
             </Key>
 
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_DESC">
+                <Original>Applies a global addAction (whose state will remain the same over all clients) on an object.</Original>
+                <French>Applique une addAction globale (dont l’état sera le même chez tous les joueurs) sur un objet.</French>
+            </Key>
+
             <!-- action text -->
             <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_TEXT_DN">
                 <Original>Action text</Original>
@@ -15,8 +20,8 @@
             </Key>
 
             <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_TEXT_TOOLTIP">
-                <Original>Action text</Original>
-                <French>Texte de l'action</French>
+                <Original>Text that will be displayed in the action menu. Keep this field empty if you wish to use the default text.</Original>
+                <French>Le texte qui apparaîtra dans le menu d’action. Laissez vide si vous souhaitez utiliser le texte par défaut.</French>
             </Key>
 
             <!-- server expression -->
@@ -26,8 +31,8 @@
             </Key>
 
             <Key ID="STR_CORP_GLOBAL_ADDACTION_SERVER_EXPRESSION_TOOLTIP">
-                <Original>Server expression</Original>
-                <French>Expression serveur</French>
+                <Original>Code that will be executed on the server when the action is triggered. The variable _this is exposed in the expression and contains the player who executed the action and the object on which the action is attached to (if that object has not been deleted meanwhile).</Original>
+                <French>Le code qui sera exécuté côté serveur lorsque l’action sera déclenchée. La variable _this est exposée dans l’expression et contient le joueur ayant exécuté l’action ainsi que l’objet sur lequel est attachée l’action (si ce dernier n’a pas été supprimé).</French>
             </Key>
 
             <!-- client expression -->
@@ -37,14 +42,14 @@
             </Key>
 
             <Key ID="STR_CORP_GLOBAL_ADDACTION_CLIENT_EXPRESSION_TOOLTIP">
-                <Original>Client expression</Original>
-                <French>Expression client</French>
+                <Original>Code that will be executed on all clients when the action is triggered. The variable _this is exposed in the expression and contains the player who executed the action and the object on which the action is attached to (if that object has not been deleted meanwhile).</Original>
+                <French>Le code qui sera exécuté chez tous les clients lorsque l’action sera déclenchée. La variable _this est exposée dans l’expression et contient le joueur ayant exécuté l’action ainsi que l’objet sur lequel est attachée l’action (si ce dernier n’a pas été supprimé).</French>
             </Key>
 
             <!-- action distance -->
             <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_DN">
-                <Original>Action distance</Original>
-                <French>Distance de l'action</French>
+                <Original>Action display distance</Original>
+                <French>Distance d'affichage de l'action</French>
             </Key>
 
             <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_TOOLTIP">
@@ -59,8 +64,8 @@
             </Key>
 
             <Key ID="STR_CORP_GLOBAL_ADDACTION_DELETE_OBJECT_TOOLTIP">
-                <Original>Delete object</Original>
-                <French>Supprimer l'objet</French>
+                <Original>Should the object be deleted after the action is triggered?</Original>
+                <French>L’objet doit-il être supprimé lorsque l’action est déclenchée ?</French>
             </Key>
 
             <!-- remove action -->
@@ -70,8 +75,8 @@
             </Key>
 
             <Key ID="STR_CORP_GLOBAL_ADDACTION_REMOVE_ACTION_TOOLTIP">
-                <Original>Remove action</Original>
-                <French>Retirer l'action</French>
+                <Original>Should the action be removed from the object after it is triggered? Useless if the "delete object" attribute is toggled on.</Original>
+                <French>L’action doit-elle être retirée de l’objet lorsque l’action est déclenchée ? Inutile si le paramètre "supprimer l'objet" est coché.</French>
             </Key>
 
         </Container>

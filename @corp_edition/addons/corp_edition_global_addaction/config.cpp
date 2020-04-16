@@ -99,6 +99,13 @@ class CfgVehicles {
                 typeName = "BOOL";
                 defaultValue = "false";
             };
+
+            class ModuleDescription: ModuleDescription{};
+        };
+
+        class ModuleDescription {
+          description = $STR_CORP_GLOBAL_ADDACTION_DESC;
+          sync[] = {"Anything"};
         };
     };
 };
