@@ -9,7 +9,7 @@ private _objects = param [1, [], [[]]];
 private _actionText       = _logic getvariable ["ActionText", "Action"];
 private _serverExpression = _logic getVariable ["ServerExpression", ""];
 private _clientExpression = _logic getVariable ["ClientExpression", ""];
-private _actionDistance   = _logic getVariable ["ActionDistance", 6];
+private _actionDistance   = _logic getVariable ["ActionDistance", 5];
 private _deleteObject     = _logic getVariable ["DeleteObject", false];
 private _removeAction     = _logic getVariable ["RemoveAction", false];
 

@@ -48,8 +48,8 @@
             </Key>
 
             <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_TOOLTIP">
-                <Original>Action distance</Original>
-                <French>Distance de l'action</French>
+              <Original>The distance between the player and the object for the action to be visible in the action menu. If you are trying to apply this module to a tall flag, specify a value higher than 5.</Original>
+              <French>La distance entre le joueur et l’objet pour que l’action soit visible dans le menu d’action. Si vous appliquez ce module à un grand drapeau, mettez une valeur supérieure à 5.</French>
             </Key>
 
             <!-- delete object -->

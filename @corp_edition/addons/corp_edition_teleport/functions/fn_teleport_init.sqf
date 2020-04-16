@@ -4,7 +4,7 @@ private _logic		= param [0, objNull, [objNull]];
 private _objects	= param [1, [], [[]]];
 
 private _actionDText		= _logic getVariable ["ActionText", ""];
-private _actionDistance		= _logic getVariable ["ActionDistance", 3];
+private _actionDistance		= _logic getVariable ["ActionDistance", 5];
 
 if (_actionDText == "") then {
   _actionDText = "<t color='#ffffff'><img image='\corp_edition_teleport\icon.paa'/> Téléportation</t>";

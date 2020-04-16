@@ -80,7 +80,7 @@ class CfgVehicles {
                 displayName = $STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_DN;
                 tooltip = $STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_TOOLTIP;
                 typeName = "NUMBER";
-                defaultValue = "3";
+                defaultValue = "5";
                 control = "SliderAddactionDistance";
             };
 
