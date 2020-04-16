@@ -4,7 +4,7 @@
         <Container name="modules">
 
             <Key ID="STR_CORP_DEV_DN">
-                <Original>development</Original>
+                <Original>Development</Original>
                 <French>Développement</French>
             </Key>
 

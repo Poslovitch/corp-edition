@@ -4,7 +4,7 @@
         <Container name="modules">
 
             <Key ID="STR_CORP_AREA_PATROLS_DN">
-                <Original>Area Patrols</Original>
+                <Original>Area patrols</Original>
                 <French>Patrouilles de zone</French>
             </Key>
 
