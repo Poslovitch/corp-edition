@@ -76,6 +76,13 @@ class CfgVehicles {
                 typeName = "NUMBER";
                 defaultValue = "0";
             };
+
+            class ModuleDescription: ModuleDescription {};
+        };
+
+        class ModuleDescription: ModuleDescription {
+          description = $STR_CORP_TELEPORT_TO_POSITION_DESC;
+          sync[] = {"AnyStaticObject"};
         };
     };
 };
