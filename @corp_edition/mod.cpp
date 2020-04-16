@@ -1,4 +1,4 @@
-name = "CORP Édition";
+name = "CORP Édition v0.6.0-dev";
 picture = "corp_edition.paa";
 actionName = "www.corp-arma.fr";
 action = "https://www.corp-arma.fr";
