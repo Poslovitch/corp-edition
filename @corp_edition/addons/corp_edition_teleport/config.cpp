@@ -24,7 +24,6 @@ class CfgVehicles {
   class Module_F: Logic {
     class AttributesBase {
       class Edit;
-      class ModuleDescription;
     };
     class ModuleDescription
     {
