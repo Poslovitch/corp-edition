@@ -23,6 +23,10 @@ class CfgVehicles {
     class Module_F: Logic {
         class AttributesBase {
             class Edit;
+            class CategoryDescription {
+              control = "SubCategoryNoHeader1";
+              data = "AttributeSystemSubcategory";
+            };
         };
 
         class ModuleDescription {
@@ -44,6 +48,12 @@ class CfgVehicles {
         is3DEN = 0;
 
         class Attributes: AttributesBase {
+            class ModuleDescription: ModuleDescription {};
+
+            class ActionCategoryDescription: CategoryDescription {
+              description = $STR_CORP_TELEPORT_TO_POSITION_ACTION_CATEGORY;
+            };
+
             class ActionText: Edit {
                 property = "CORP_Module_TeleportToPosition_ActionText";
                 displayName = $STR_CORP_TELEPORT_TO_POSITION_ACTION_TEXT_DN;
@@ -61,6 +71,10 @@ class CfgVehicles {
                 control = "SliderAddactionDistance";
             };
 
+            class TeleportCategoryDescription: CategoryDescription {
+              description = $STR_CORP_TELEPORT_TO_POSITION_TELEPORT_CATEGORY;
+            };
+
             class TeleportPosition: Edit {
                 property = "CORP_Module_TeleportToPosition_TeleportPosition";
                 displayName = $STR_CORP_TELEPORT_TO_POSITION_TELEPORT_POSITION_DN;
@@ -76,8 +90,6 @@ class CfgVehicles {
                 typeName = "NUMBER";
                 defaultValue = "0";
             };
-
-            class ModuleDescription: ModuleDescription {};
         };
 
         class ModuleDescription: ModuleDescription {

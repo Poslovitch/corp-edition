@@ -17,6 +17,11 @@
 
         <Container name="ui">
 
+            <Key ID="STR_CORP_TELEPORT_TO_POSITION_ACTION_CATEGORY">
+              <Original>Action settings</Original>
+              <French>Paramètres de l'action</French>
+            </Key>
+
             <!-- action text -->
             <Key ID="STR_CORP_TELEPORT_TO_POSITION_ACTION_TEXT_DN">
                 <Original>Action text</Original>
@@ -37,6 +42,11 @@
             <Key ID="STR_CORP_TELEPORT_TO_POSITION_ACTION_DISTANCE_TOOLTIP">
               <Original>The distance between the player and the object for the action to be visible in the action menu. If you are trying to apply this module to a tall flag, specify a value higher than 5.</Original>
               <French>La distance entre le joueur et l’objet pour que l’action soit visible dans le menu d’action. Si vous appliquez ce module à un grand drapeau, mettez une valeur supérieure à 5.</French>
+            </Key>
+
+            <Key ID="STR_CORP_TELEPORT_TO_POSITION_TELEPORT_CATEGORY">
+              <Original>Teleportation settings</Original>
+              <French>Paramètres de la téléportation</French>
             </Key>
 
             <!-- teleport position -->

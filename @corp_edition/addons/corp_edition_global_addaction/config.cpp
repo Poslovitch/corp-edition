@@ -51,6 +51,8 @@ class CfgVehicles {
         is3DEN = 0;
 
         class Attributes: AttributesBase {
+            class ModuleDescription: ModuleDescription{};
+
             class ActionText: Edit {
                 property = "CORP_Module_GlobalAddAction_ActionText";
                 displayName = $STR_CORP_GLOBAL_ADDACTION_ACTION_TEXT_DN;
@@ -99,8 +101,6 @@ class CfgVehicles {
                 typeName = "BOOL";
                 defaultValue = "false";
             };
-
-            class ModuleDescription: ModuleDescription{};
         };
 
         class ModuleDescription {
