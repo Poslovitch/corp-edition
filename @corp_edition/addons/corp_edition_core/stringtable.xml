@@ -38,7 +38,7 @@
         <Container name="modules">
 
           <!-- Generic "Action settings" attributes category -->
-          <Key ID="STR_CORP_CORE_MUDLE_ACTION_CATEGORY">
+          <Key ID="STR_CORP_CORE_MODULE_ACTION_CATEGORY">
             <Original>Action settings</Original>
             <French>Paramètres de l'action</French>
           </Key>
