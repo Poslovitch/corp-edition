@@ -29,6 +29,9 @@ class CfgVehicles {
     class Module_F: Logic {
         class AttributesBase {
             class Edit;
+            class EditCodeMulti5 {
+              control = "EditCodeMulti5";
+            };
             class Checkbox;
             class CategoryDescription {
               control = "SubCategoryNoHeader1";
@@ -82,7 +85,7 @@ class CfgVehicles {
               description = $STR_CORP_GLOBAL_ADDACTION_EXPRESSION_CATEGORY;
             };
 
-            class ServerExpression: Edit {
+            class ServerExpression: EditCodeMulti5 {
                 property = "CORP_Module_GlobalAddAction_ServerExpression";
                 displayName = $STR_CORP_GLOBAL_ADDACTION_SERVER_EXPRESSION_DN;
                 tooltip = $STR_CORP_GLOBAL_ADDACTION_SERVER_EXPRESSION_TOOLTIP;
@@ -90,7 +93,7 @@ class CfgVehicles {
                 defaultValue = """""";
             };
 
-            class ClientExpression: Edit {
+            class ClientExpression: EditCodeMulti5 {
                 property = "CORP_Module_GlobalAddAction_ClientExpression";
                 displayName = $STR_CORP_GLOBAL_ADDACTION_CLIENT_EXPRESSION_DN;
                 tooltip = $STR_CORP_GLOBAL_ADDACTION_CLIENT_EXPRESSION_TOOLTIP;
