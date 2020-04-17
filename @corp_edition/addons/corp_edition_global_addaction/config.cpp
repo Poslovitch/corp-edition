@@ -30,6 +30,10 @@ class CfgVehicles {
         class AttributesBase {
             class Edit;
             class Checkbox;
+            class CategoryDescription {
+              control = "SubCategoryNoHeader1";
+              data = "AttributeSystemSubcategory";
+            };
         };
 
         class ModuleDescription {
@@ -53,12 +57,29 @@ class CfgVehicles {
         class Attributes: AttributesBase {
             class ModuleDescription: ModuleDescription{};
 
+            class ActionCategoryDescription: CategoryDescription {
+              description = $STR_CORP_CORE_MODULE_ACTION_CATEGORY;
+            };
+
             class ActionText: Edit {
                 property = "CORP_Module_GlobalAddAction_ActionText";
                 displayName = $STR_CORP_CORE_MODULE_ACTION_TEXT_DN;
                 tooltip = $STR_CORP_CORE_MODULE_ACTION_TEXT_TOOLTIP;
                 typeName = "STRING";
-                defaultValue = """Action""";
+                defaultValue = """"""; // Empty
+            };
+
+            class ActionDistance: Edit {
+                property = "CORP_Module_GlobalAddAction_ActionDistance";
+                displayName = $STR_CORP_CORE_MODULE_ACTION_DISTANCE_DN;
+                tooltip = $STR_CORP_CORE_MODULE_ACTION_DISTANCE_TOOLTIP;
+                typeName = "NUMBER";
+                defaultValue = "5";
+                control = "SliderAddactionDistance";
+            };
+
+            class ExpressionCategoryDescription: CategoryDescription {
+              description = $STR_CORP_GLOBAL_ADDACTION_EXPRESSION_CATEGORY;
             };
 
             class ServerExpression: Edit {
@@ -77,13 +98,8 @@ class CfgVehicles {
                 defaultValue = """""";
             };
 
-            class ActionDistance: Edit {
-                property = "CORP_Module_GlobalAddAction_ActionDistance";
-                displayName = $STR_CORP_CORE_MODULE_ACTION_DISTANCE_DN;
-                tooltip = $STR_CORP_CORE_MODULE_ACTION_DISTANCE_TOOLTIP;
-                typeName = "NUMBER";
-                defaultValue = "5";
-                control = "SliderAddactionDistance";
+            class PostActionCategoryDescription: CategoryDescription {
+              description = $STR_CORP_GLOBAL_ADDACTION_POSTACTION_CATEGORY;
             };
 
             class DeleteObject: Checkbox {

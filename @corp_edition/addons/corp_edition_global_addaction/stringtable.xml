@@ -13,6 +13,12 @@
                 <French>Applique une addAction globale (dont l’état sera le même chez tous les joueurs) sur un objet.</French>
             </Key>
 
+            <!-- Expressions attributes category -->
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_EXPRESSION_CATEGORY">
+              <Original>Expressions to execute</Original>
+              <French>Expressions à exécuter</French>
+            </Key>
+
             <!-- server expression -->
             <Key ID="STR_CORP_GLOBAL_ADDACTION_SERVER_EXPRESSION_DN">
                 <Original>Server expression</Original>
@@ -33,6 +39,12 @@
             <Key ID="STR_CORP_GLOBAL_ADDACTION_CLIENT_EXPRESSION_TOOLTIP">
                 <Original>Code that will be executed on all clients when the action is triggered. The variable _this is exposed in the expression and contains the player who executed the action and the object on which the action is attached to (if that object has not been deleted meanwhile).</Original>
                 <French>Le code qui sera exécuté chez tous les clients lorsque l’action sera déclenchée. La variable _this est exposée dans l’expression et contient le joueur ayant exécuté l’action ainsi que l’objet sur lequel est attachée l’action (si ce dernier n’a pas été supprimé).</French>
+            </Key>
+
+            <!-- post-action attributes category -->
+            <Key ID="STR_CORP_GLOBAL_ADDACTION_POSTACTION_CATEGORY">
+              <Original>Post-actions settings</Original>
+              <French>Comportement après l'exécution de l'action</French>
             </Key>
 
             <!-- delete object -->
