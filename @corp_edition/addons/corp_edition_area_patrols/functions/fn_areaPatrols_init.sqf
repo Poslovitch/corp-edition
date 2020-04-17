@@ -10,7 +10,7 @@ if (count _units == 0) exitWith {
     [
         format [
             "%1 %2 : %3", localize "STR_CORP_AREA_PATROLS_DN",
-            _logic, localize "STR_CORP_CORE_NO_UNIT_SYNCHED"
+            _logic, localize "STR_CORP_CORE_NO_UNIT_SYNCED"
         ]
     ] call BIS_fnc_error;
 };

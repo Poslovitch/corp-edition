@@ -12,7 +12,7 @@ if (count _units == 0) exitWith {
             "%1 %2 : %3",
             localize "STR_CORP_BUILDINGS_OCCUPATION_DN",
             _logic,
-            localize "STR_CORP_CORE_NO_UNIT_SYNCHED"
+            localize "STR_CORP_CORE_NO_UNIT_SYNCED"
         ]
     ] call BIS_fnc_error;
 };

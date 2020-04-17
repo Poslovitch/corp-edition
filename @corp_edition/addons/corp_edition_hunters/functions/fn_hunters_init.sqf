@@ -7,8 +7,8 @@ private _logic    = param [0, objNull, [objNull]];
 private _units    = param [1, [], [[]]];
 private _triggers = _logic call BIS_fnc_moduleTriggers;
 
-if (count _units == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_HUNTERS_DN", _logic, localize "STR_CORP_CORE_NO_UNIT_SYNCHED"]] call BIS_fnc_error;};
-if (count _triggers == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_HUNTERS_DN", _logic, localize "STR_CORP_CORE_NO_TRIGGER_SYNCHED"]] call BIS_fnc_error;};
+if (count _units == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_HUNTERS_DN", _logic, localize "STR_CORP_CORE_NO_UNIT_SYNCED"]] call BIS_fnc_error;};
+if (count _triggers == 0) exitWith {[format ["%1 %2 : %3", localize "STR_CORP_HUNTERS_DN", _logic, localize "STR_CORP_CORE_NO_TRIGGER_SYNCED"]] call BIS_fnc_error;};
 
 private _huntingUnits    = _logic getVariable ["HuntingUnits", 4];
 private _respawnDistance = _logic getVariable ["RespawnDistance", 300];

@@ -18,17 +18,17 @@
 
         <Container name="errors">
 
-            <Key ID="STR_CORP_CORE_NO_UNIT_SYNCHED">
+            <Key ID="STR_CORP_CORE_NO_UNIT_SYNCED">
                 <Original>No unit synced to module</Original>
                 <French>Aucune unité synchronisée au module</French>
             </Key>
 
-            <Key ID="STR_CORP_CORE_NO_TRIGGER_SYNCHED">
+            <Key ID="STR_CORP_CORE_NO_TRIGGER_SYNCED">
                 <Original>No trigger synced to module</Original>
                 <French>Aucun déclencheur synchronisé au module</French>
             </Key>
 
-            <Key ID="STR_CORP_CORE_NO_AREA_SYNCHED">
+            <Key ID="STR_CORP_CORE_NO_AREA_SYNCED">
                 <Original>No area synced to module</Original>
                 <French>Aucune zone synchronisée au module</French>
             </Key>
