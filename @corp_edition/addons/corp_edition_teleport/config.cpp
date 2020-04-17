@@ -25,8 +25,7 @@ class CfgVehicles {
     class AttributesBase {
       class Edit;
     };
-    class ModuleDescription
-    {
+    class ModuleDescription {
       class AnyStaticObject;
     };
   };
@@ -45,6 +44,8 @@ class CfgVehicles {
     is3DEN = 0;
 
     class Attributes: AttributesBase {
+      class ModuleDescription: ModuleDescription{};
+
       class ActionText: Edit {
           property = "CORP_Module_Teleport_ActionText";
           displayName = $STR_CORP_TELEPORT_ACTION_TEXT_DN;
@@ -61,8 +62,6 @@ class CfgVehicles {
           defaultValue = "5";
           control = "SliderAddactionDistance";
       };
-
-      class ModuleDescription: ModuleDescription{};
     };
 
     class ModuleDescription: ModuleDescription {
