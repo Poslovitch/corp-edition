@@ -51,21 +51,21 @@ class CfgVehicles {
             class ModuleDescription: ModuleDescription {};
 
             class ActionCategoryDescription: CategoryDescription {
-              description = $STR_CORP_TELEPORT_TO_POSITION_ACTION_CATEGORY;
+              description = $STR_CORP_CORE_MODULE_ACTION_CATEGORY;
             };
 
             class ActionText: Edit {
                 property = "CORP_Module_TeleportToPosition_ActionText";
-                displayName = $STR_CORP_TELEPORT_TO_POSITION_ACTION_TEXT_DN;
-                tooltip = $STR_CORP_TELEPORT_TO_POSITION_ACTION_TEXT_TOOLTIP;
+                displayName = $STR_CORP_CORE_MODULE_ACTION_TEXT_DN;
+                tooltip = $STR_CORP_CORE_MODULE_ACTION_TEXT_TOOLTIP;
                 typeName = "STRING";
                 defaultValue = """Action""";
             };
 
             class ActionDistance: Edit {
                 property = "CORP_Module_TeleportToPosition_ActionDistance";
-                displayName = $STR_CORP_TELEPORT_TO_POSITION_ACTION_DISTANCE_DN;
-                tooltip = $STR_CORP_TELEPORT_TO_POSITION_ACTION_DISTANCE_TOOLTIP;
+                displayName = $STR_CORP_CORE_MODULE_ACTION_DISTANCE_DN;
+                tooltip = $STR_CORP_CORE_MODULE_ACTION_DISTANCE_TOOLTIP;
                 typeName = "NUMBER";
                 defaultValue = "5";
                 control = "SliderAddactionDistance";

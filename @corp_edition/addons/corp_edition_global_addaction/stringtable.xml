@@ -13,17 +13,6 @@
                 <French>Applique une addAction globale (dont l’état sera le même chez tous les joueurs) sur un objet.</French>
             </Key>
 
-            <!-- action text -->
-            <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_TEXT_DN">
-                <Original>Action text</Original>
-                <French>Texte de l'action</French>
-            </Key>
-
-            <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_TEXT_TOOLTIP">
-                <Original>Text that will be displayed in the action menu. Keep this field empty if you wish to use the default text.</Original>
-                <French>Le texte qui apparaîtra dans le menu d’action. Laissez vide si vous souhaitez utiliser le texte par défaut.</French>
-            </Key>
-
             <!-- server expression -->
             <Key ID="STR_CORP_GLOBAL_ADDACTION_SERVER_EXPRESSION_DN">
                 <Original>Server expression</Original>
@@ -44,17 +33,6 @@
             <Key ID="STR_CORP_GLOBAL_ADDACTION_CLIENT_EXPRESSION_TOOLTIP">
                 <Original>Code that will be executed on all clients when the action is triggered. The variable _this is exposed in the expression and contains the player who executed the action and the object on which the action is attached to (if that object has not been deleted meanwhile).</Original>
                 <French>Le code qui sera exécuté chez tous les clients lorsque l’action sera déclenchée. La variable _this est exposée dans l’expression et contient le joueur ayant exécuté l’action ainsi que l’objet sur lequel est attachée l’action (si ce dernier n’a pas été supprimé).</French>
-            </Key>
-
-            <!-- action distance -->
-            <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_DN">
-                <Original>Action display distance</Original>
-                <French>Distance d'affichage de l'action</French>
-            </Key>
-
-            <Key ID="STR_CORP_GLOBAL_ADDACTION_ACTION_DISTANCE_TOOLTIP">
-              <Original>The distance between the player and the object for the action to be visible in the action menu. If you are trying to apply this module to a tall flag, specify a value higher than 5.</Original>
-              <French>La distance entre le joueur et l’objet pour que l’action soit visible dans le menu d’action. Si vous appliquez ce module à un grand drapeau, mettez une valeur supérieure à 5.</French>
             </Key>
 
             <!-- delete object -->

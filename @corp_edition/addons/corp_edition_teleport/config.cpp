@@ -48,16 +48,16 @@ class CfgVehicles {
 
       class ActionText: Edit {
           property = "CORP_Module_Teleport_ActionText";
-          displayName = $STR_CORP_TELEPORT_ACTION_TEXT_DN;
-          tooltip = $STR_CORP_TELEPORT_ACTION_TEXT_TOOLTIP;
+          displayName = $STR_CORP_CORE_MODULE_ACTION_TEXT_DN;
+          tooltip = $STR_CORP_CORE_MODULE_ACTION_TEXT_TOOLTIP;
           typeName = "STRING";
           defaultValue = """"""; // Empty
       };
 
       class ActionDistance: Edit {
           property = "CORP_Module_Teleport_ActionDistance";
-          displayName = $STR_CORP_TELEPORT_ACTION_DISTANCE_DN;
-          tooltip = $STR_CORP_TELEPORT_ACTION_DISTANCE_TOOLTIP;
+          displayName = $STR_CORP_CORE_MODULE_ACTION_DISTANCE_DN;
+          tooltip = $STR_CORP_CORE_MODULE_ACTION_DISTANCE_TOOLTIP;
           typeName = "NUMBER";
           defaultValue = "5";
           control = "SliderAddactionDistance";
